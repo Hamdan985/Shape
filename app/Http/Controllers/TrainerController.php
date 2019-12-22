@@ -14,7 +14,8 @@ class TrainerController extends Controller
      */
     public function index()
     {
-        //
+        $trainer = Trainer::all();
+        return view('trainers.dashboard')->with('trainer',$trainer);
     }
 
     /**

@@ -11,7 +11,8 @@
             <div class="col-sm-6 userform">
                 <div class="userform">
                     <h2 class="text-center">Login</h2>
-                    <form action="">
+                    <form action="/signin" method="POST">
+                        @csrf
                         <div class="form-group row">
                             <label for="role" class="col-sm-1"><i class="fas fa-users-cog"></i></label>
                             <div class="col-sm-11">
@@ -34,7 +35,7 @@
                         <div class="form-group row">
                             <label for="password" class="col-sm-1"><i class="fas fa-unlock-alt"></i></label>
                             <div class="col-sm-11">
-                                <input type="text" class="form-control" name="password" id="password" placeholder="Password">
+                                <input type="password" class="form-control" name="password" id="password" placeholder="Password">
                             </div>
                         </div>
 

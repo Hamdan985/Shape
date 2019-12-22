@@ -17,9 +17,15 @@ Route::get('/welcome', function () {
 Route::get('/', function () {
     return view('index');
 })->name('index');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/registration', 'UserRegisterController@index');
-Route::get('/signin', 'UserLoginController@index');
+Route::get('/signin', 'Auth\UserLoginController@index');
+Route::post('/registration', 'UserRegisterController@store');
+Route::post('/signin', 'Auth\UserLoginController@login');
+
+Route::resource('trainers','TrainerController');
+Route::resource('trainers','TrainerController')->only('index')->middleware('auth:trainer');
