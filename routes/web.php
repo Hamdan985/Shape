@@ -14,11 +14,12 @@
 Route::get('/welcome', function () {
     return view('welcome');
 });
-
-
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/registration', 'UserRegisterController@index');
+Route::get('/signin', 'UserLoginController@index');

@@ -21,7 +21,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:900i|Varela+Round&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="css/index.css">
-
+    <script src="https://kit.fontawesome.com/4763e7c55e.js" crossorigin="anonymous"></script>
 </head>
 
 <body>

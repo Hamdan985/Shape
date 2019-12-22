@@ -10,17 +10,17 @@
 
   <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
-    <a class="navbar-brand ml-sm-5" href="index.html">Shape</a>
+    <a class="navbar-brand ml-sm-5" href="{{route('index')}}">Shape</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav" style="margin-left:40%;">
-        <li class="nav-item mr-sm-5"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item mr-sm-5"><a class="nav-link" href="{{route('index')}}">Home</a></li>
         <li class="nav-item mr-sm-5"><a class="nav-link" href="#services">Services</a></li>
-        <li class="nav-item mr-sm-5"><a class="nav-link" href="" data-toggle="modal" data-target="#loginModal">Login</a></li>
-        <li class="nav-item mr-sm-5"><a class="nav-link" href="" data-toggle="modal" data-target="#registerModal">Register</a></li>      
+        <li class="nav-item mr-sm-5"><a class="nav-link" href="\signin">Login</a></li>
+        <li class="nav-item mr-sm-5"><a class="nav-link" href="\registration">Register</a></li>      
       </ul>
     </div>
   </nav>
@@ -56,19 +56,25 @@
       <div class="row">
         <div class="col-sm-4">
           <h3>Customers <img src="img/weight.png" alt="customer"></h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse ullam quo perspiciatis. Corporis molestias provident, vitae velit libero eligendi dignissimos quis expedita quaerat iusto, cum nemo delectus accusamus voluptatibus quia.</p>
+          <p>Workout anywhere, anytime</p>
+          <p>Meal plans by professional trainers</p>
+          <p>Online training lessons</p>
         </div>
         <div class="col-sm-4">
           <h3>Owners <img src="img/handshake.png" alt="owner"></h3>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, soluta exercitationem. Excepturi incidunt, sapiente quibusdam vitae nostrum molestiae voluptatibus, voluptates tenetur magnam, ad est provident molestias vero facilis! Necessitatibus, explicabo!</p>
+          <p>Easily managed data and memberships</p>
+          <p>Collaborating with partner gyms</p>
+          <p>Advertising your organization</p>
         </div>
         <div class="col-sm-4">
           <h3>Trainers <img src="img/strong.png" alt="trainer"></h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel adipisci dolorum magnam et error? Aspernatur aperiam provident voluptatum possimus porro placeat quod qui dolorem cum tempora, accusantium eaque, aliquid sit?</p>
+          <p>Fitness coaches at gyms</p>
+          <p>Passion for healthy life</p>
+          <p>Online training lessons</p>
         </div>
       </div>
     </div>
-    <a href="#" class="btn btn-warning btn-lg">Explore serivces</a>
+    <a href="" data-toggle="modal" data-target="#servicesModal" class="btn btn-warning btn-lg">Explore serivces</a>
   </div>
 
 
@@ -105,7 +111,7 @@
         <div class="col-sm-6">
           <h3>Customer, Owner or Trainer</h3>
           <p>Sign up today and show your fitness lessons to all</p>
-          <a href="" data-toggle="modal" data-target="#registerModal" class="btn btn-warning btn-lg">Register today</a>
+          <a href="/registration" class="btn btn-warning btn-lg">Register today</a>
         </div>
       </div>
     </div>
@@ -188,34 +194,49 @@
 
     <!-- Login Form Modal -->
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Login</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-                <form action="">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Login</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <form action="">
 
-                    <div class="form-group">
-                      <label for="userid">User Id</label>
-                      <input class="form-control" type="text" name="userid" id="userid">
-                    </div>
-                    <div class="form-group">
-                      <label for="password">Password</label>
-                      <input class="form-control"  type="password" name="password" id="password">
-                    </div>
-      
-                  
-      
-                  <input type="submit" value="Login" class="btn btn-lg btn-block btn-warning" id="btn">
-                </form>
-            </div>
+                  <div class="form-group">
+                    <label for="userid">User Id</label>
+                    <input class="form-control" type="text" name="userid" id="userid">
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                    <input class="form-control"  type="password" name="password" id="password">
+                  </div>
+                <input type="submit" value="Login" class="btn btn-lg btn-block btn-warning" id="btn">
+              </form>
           </div>
         </div>
       </div>
+    </div>
+
+
+    <!-- Services Modal -->
+    <div class="modal fade" id="servicesModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Coming Soon</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <h4>All the <span class="shape">Shape</span> services will be listed soon.</h4>
+          </div>
+        </div>
+      </div>
+    </div>
 
   <footer>
     <p>&copy; 2019-2020 <span style="color:#1b68e4;">Shape</span>. All rights reserved.</p>
