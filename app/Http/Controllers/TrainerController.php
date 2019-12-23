@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class TrainerController extends Controller
 {
+    public function __construct(){
+        // $this->middleware('auth:trainer');
+    }
     /**
      * Display a listing of the resource.
      *

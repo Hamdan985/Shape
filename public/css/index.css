@@ -152,8 +152,8 @@ footer{
 }
 
 .form-img{
-  width: 70%;
-  margin: 15% 15% 15%;
+  width: 60%;
+  margin: 15% 20%;
   border-radius: 5%;
 }
 .userform{
@@ -163,9 +163,13 @@ footer{
 div .form-group{
   margin-bottom: 25px;
 }
+.userform input,.userform select{
+  height: 32px;
+}
 .form-button input[type='submit']{
   margin:0 auto;
   display: block;
+  height: 40px;
 }
 #google{
   margin-top:20px;

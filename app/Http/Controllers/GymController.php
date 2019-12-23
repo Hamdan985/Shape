@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class GymController extends Controller
 {
+    public function __construct(){
+        // $this->middleware('auth:gym');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +17,8 @@ class GymController extends Controller
      */
     public function index()
     {
-        //
+        $gym = Gym::all();
+        return view('gyms.dashboard')->with('gym',$gym);
     }
 
     /**

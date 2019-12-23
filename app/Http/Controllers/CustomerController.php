@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
+    public function __construct(){
+        // $this->middleware('auth:customer');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +17,8 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        //
+        $customer = Customer::all();
+        return view('customers.dashboard')->with('customer',$customer);
     }
 
     /**

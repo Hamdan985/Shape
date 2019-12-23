@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-
 class Trainer extends Authenticatable
 {
     use Notifiable;
@@ -16,5 +15,6 @@ class Trainer extends Authenticatable
     protected $hidden = ['password'];
 
     protected $primaryKey = 'tid';
+
     protected $guarded = [];   
 }

@@ -14,7 +14,7 @@
             </div>
             <div class="col-sm-7 userform">
                 <div class="userform">
-                <h2 class="text-center">Register</h2>
+                <h3 class="text-center" style="font-size:33px;">Register</h3>
 
                 <form action="/registration" method="POST">
                     @csrf
@@ -24,7 +24,7 @@
                             <select class="form-control" name="role" id="role">
                                 <option value="">Select any one</option>
                                 <option value="Customer">Customer</option>
-                                <option value="Owner">Gym Owner</option>
+                                <option value="Gym">Gym Owner</option>
                                 <option value="Trainer">Trainer</option>
                             </select>
                         </div>

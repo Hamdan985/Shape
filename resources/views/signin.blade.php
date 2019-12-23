@@ -10,7 +10,8 @@
             <div class="col-sm-3"></div>
             <div class="col-sm-6 userform">
                 <div class="userform">
-                    <h2 class="text-center">Login</h2>
+                    <h3 class="text-center" style="font-size:33px;">Login</h3>
+
                     <form action="/signin" method="POST">
                         @csrf
                         <div class="form-group row">
@@ -19,7 +20,7 @@
                                 <select class="form-control" name="role" id="role">
                                     <option value="">Select any one</option>
                                     <option value="Customer">Customer</option>
-                                    <option value="Owner">Gym Owner</option>
+                                    <option value="Gym">Gym Owner</option>
                                     <option value="Trainer">Trainer</option>
                                 </select>
                             </div>
