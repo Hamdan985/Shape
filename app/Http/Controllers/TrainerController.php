@@ -17,7 +17,7 @@ class TrainerController extends Controller
      */
     public function index()
     {
-        return view('trainers.dashboard');
+        return view('trainers.tdashboard');
     }
 
     /**
@@ -60,7 +60,7 @@ class TrainerController extends Controller
      */
     public function edit(Trainer $trainer)
     {
-        //
+        // return view('trainers.dashboard')->with('trainer',$trainer);
     }
 
     /**
@@ -85,4 +85,10 @@ class TrainerController extends Controller
     {
         //
     }
+
+    public function trainer_profile()
+    {
+        return view('trainers.tprofile');
+    }
+    
 }

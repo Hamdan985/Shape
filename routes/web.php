@@ -28,7 +28,30 @@ Route::post('/registration', 'Auth\UserRegisterController@store');
 Route::post('/signin', 'Auth\UserLoginController@login');
 
 Route::resource('trainers','TrainerController');
-
 Route::resource('gyms','GymController');
-
 Route::resource('customers','CustomerController');
+
+Route::get('/basic', function () {
+    return view('layouts.dash.basic-table');
+});
+
+Route::get('/blank', function () {
+    return view('layouts.dash.blank');
+});
+
+Route::get('/dashboar', function () {
+    return view('layouts.dash.dashboard');
+});
+
+Route::get('/fontawesome', function () {
+    return view('layouts.dash.fontawesome');
+});
+
+Route::get('/profile', function () {
+    return view('layouts.dash.profile');
+});
+
+//Trainers
+
+
+Route::get('/tprofile','TrainerController@trainer_profile');
