@@ -19,9 +19,21 @@
       <ul class="navbar-nav" style="margin-left:40%;">
         <li class="nav-item mr-sm-5"><a class="nav-link" href="{{route('index')}}">Home</a></li>
         <li class="nav-item mr-sm-5"><a class="nav-link" href="#services">Services</a></li>
+        
+        @if(Auth::guard('customer')->check())
+        <li class="nav-item mr-sm-5"><a class="nav-link" href="/customers">Profile</a></li>
+
+        @elseif(Auth::guard('trainer')->check())
+        <li class="nav-item mr-sm-5"><a class="nav-link" href="/trainers">Profile</a></li>
+
+        @elseif(Auth::guard('gym')->check())
+        <li class="nav-item mr-sm-5"><a class="nav-link" href="/gyms">Profile</a></li>
+
+        @else
         <li class="nav-item mr-sm-5"><a class="nav-link" href="{{route('signin')}}">Login</a></li>
         <li class="nav-item mr-sm-5"><a class="nav-link" href="{{route('registration')}}">Register</a></li>      
-      </ul>
+        @endif
+        </ul>
     </div>
   </nav>
 

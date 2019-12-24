@@ -21,7 +21,7 @@
                     <div class="form-group row">
                         <label for="role" class="col-sm-1"><i class="fas fa-users-cog"></i></label>
                         <div class="col-sm-11">
-                            <select class="form-control" name="role" id="role">
+                            <select class="form-control" name="role" id="role" required>
                                 <option value="">Select any one</option>
                                 <option value="Customer">Customer</option>
                                 <option value="Gym">Gym Owner</option>
@@ -32,31 +32,56 @@
                     <div class="form-group row">
                         <label for="name" class="col-sm-1"><i class="fas fa-user"></i></label>
                         <div class="col-sm-11">
-                            <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+                            <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" placeholder="Name" value="{{ old('name') }}" required>
+                            @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="phone" class="col-sm-1"><i class="fas fa-phone-alt"></i></label>
                         <div class="col-sm-11">
-                            <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone No.">
+                            <input type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" id="phone" placeholder="Phone No." value="{{ old('phone') }}" required>
+                            @error('phone')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="address" class="col-sm-1"><i class="fas fa-map-marked-alt"></i></label>
                         <div class="col-sm-11">
-                            <input type="text"  class="form-control" name="address" id="address" placeholder="Address">
+                            <input type="text"  class="form-control @error('address') is-invalid @enderror" name="address" id="address" placeholder="Address" value="{{ old('address') }}" required>
+                            @error('address')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="email" class="col-sm-1"><i class="fas fa-envelope"></i></label>
                         <div class="col-sm-11">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Email Id">
+                            <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" placeholder="Email Id" value="{{ old('email') }}" required>
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="password" class="col-sm-1"><i class="fas fa-unlock-alt"></i></label>
                         <div class="col-sm-11">
-                            <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                            <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" id="password" placeholder="Password" required>
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                     </div>
 

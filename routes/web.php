@@ -28,10 +28,7 @@ Route::post('/registration', 'Auth\UserRegisterController@store');
 Route::post('/signin', 'Auth\UserLoginController@login');
 
 Route::resource('trainers','TrainerController');
-// Route::resource('trainers','TrainerController')->only('index')->middleware('auth:trainer');
 
-Route::resource('gyms','TrainerController');
-// Route::resource('gyms','TrainerController')->only('index')->middleware('auth:gym');
+Route::resource('gyms','GymController');
 
-Route::resource('customers','TrainerController');
-// Route::resource('customers','TrainerController')->only('index')->middleware('auth:customer');
+Route::resource('customers','CustomerController');

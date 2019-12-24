@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class TrainerController extends Controller
 {
     public function __construct(){
-        // $this->middleware('auth:trainer');
+        $this->middleware('auth:trainer');
     }
     /**
      * Display a listing of the resource.
@@ -17,8 +17,7 @@ class TrainerController extends Controller
      */
     public function index()
     {
-        $trainer = Trainer::all();
-        return view('trainers.dashboard')->with('trainer',$trainer);
+        return view('trainers.dashboard');
     }
 
     /**

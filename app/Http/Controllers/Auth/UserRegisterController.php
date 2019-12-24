@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
@@ -22,6 +21,11 @@ class UserRegisterController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+                'password'=>'required|min:8',
+        ]);
+
+        //Trainer Register
         if($request->role == 'Trainer'){
             $trainer = new Trainer;
             $trainer->tname = $request->name;
@@ -34,7 +38,9 @@ class UserRegisterController extends Controller
 
             return redirect('trainers');
         }
-        else if($request->role == 'Customer'){
+
+        //Customer Register
+        if($request->role == 'Customer'){
             $customer = new Customer;
             $customer->cname = $request->name;
             $customer->cphone = $request->phone;
@@ -46,7 +52,9 @@ class UserRegisterController extends Controller
 
             return redirect('customers');
         }
-        else if($request->role == 'Gym'){
+
+        //Gym Register
+        if($request->role == 'Gym'){
             $gym = new Gym;
             $gym->gname = $request->name;
             $gym->gphone = $request->phone;

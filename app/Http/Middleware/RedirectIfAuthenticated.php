@@ -18,7 +18,6 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         switch($guard){
-
             case 'trainer':
                 if(Auth::guard($guard)->check()){
                     return redirect('/trainers');
