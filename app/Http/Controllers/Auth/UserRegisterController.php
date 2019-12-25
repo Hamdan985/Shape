@@ -27,44 +27,58 @@ class UserRegisterController extends Controller
 
         //Trainer Register
         if($request->role == 'Trainer'){
-            $trainer = new Trainer;
-            $trainer->tname = $request->name;
-            $trainer->tphone = $request->phone;
-            $trainer->taddress = $request->address; 
-            $trainer->email = $request->email; 
-            $trainer->password = Hash::make($request->password); 
-
-            $trainer->save();
-
-            return redirect('trainers');
+            if (Trainer::where('tphone', '=', $request->phone)->exists() or Trainer::where('email', '=', $request->email)->exists()) {
+                return redirect()->back()->withErrors(['Email Id or Phone No. already exists']); 
+            }
+            else{
+                $trainer = new Trainer;
+                $trainer->tname = $request->name;
+                $trainer->tphone = $request->phone;
+                $trainer->taddress = $request->address; 
+                $trainer->email = $request->email; 
+                $trainer->password = Hash::make($request->password); 
+    
+                $trainer->save();
+    
+                return redirect('trainers');
+            }
         }
 
         //Customer Register
         if($request->role == 'Customer'){
-            $customer = new Customer;
-            $customer->cname = $request->name;
-            $customer->cphone = $request->phone;
-            $customer->caddress = $request->address; 
-            $customer->email = $request->email; 
-            $customer->password = Hash::make($request->password); 
-
-            $customer->save();
-
-            return redirect('customers');
+            if (Customer::where('cphone', '=', $request->phone)->exists() or Customer::where('email', '=', $request->email)->exists()) {
+                return redirect()->back()->withErrors(['Email Id or Phone No. already exists']); 
+            }
+            else{
+                $customer = new Customer;
+                $customer->cname = $request->name;
+                $customer->cphone = $request->phone;
+                $customer->caddress = $request->address; 
+                $customer->email = $request->email; 
+                $customer->password = Hash::make($request->password); 
+    
+                $customer->save();
+    
+                return redirect('customers');
+            }
         }
 
         //Gym Register
         if($request->role == 'Gym'){
-            $gym = new Gym;
-            $gym->gname = $request->name;
-            $gym->gphone = $request->phone;
-            $gym->gaddress = $request->address; 
-            $gym->email = $request->email; 
-            $gym->password = Hash::make($request->password); 
-
-            $gym->save();
-
-            return redirect('gyms');
+            if (Gym::where('gphone', '=', $request->phone)->exists() or Gym::where('email', '=', $request->email)->exists()) {
+                return redirect()->back()->withErrors(['Email Id or Phone No. already exists']); 
+            }else{
+                $gym = new Gym;
+                $gym->gname = $request->name;
+                $gym->gphone = $request->phone;
+                $gym->gaddress = $request->address; 
+                $gym->email = $request->email; 
+                $gym->password = Hash::make($request->password); 
+    
+                $gym->save();
+    
+                return redirect('gyms');
+            }
         }
     }
 }

@@ -151,3 +151,7 @@ body {
 .panel-theme a:hover {
   color: #0791e6;
 }
+
+label{
+  font-weight: bold;
+}

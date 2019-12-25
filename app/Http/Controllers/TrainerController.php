@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Trainer;
+use App\Gym;
 use Illuminate\Http\Request;
 
 class TrainerController extends Controller
 {
     public function __construct(){
-        $this->middleware('auth:trainer');
+        $this->middleware('auth:trainer',[
+            'except' => ['update','destroy']
+        ]);
     }
     /**
      * Display a listing of the resource.
@@ -60,7 +63,6 @@ class TrainerController extends Controller
      */
     public function edit(Trainer $trainer)
     {
-        // return view('trainers.dashboard')->with('trainer',$trainer);
     }
 
     /**
@@ -70,9 +72,33 @@ class TrainerController extends Controller
      * @param  \App\Trainer  $trainer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Trainer $trainer)
+    public function update(Request $request, $tid)
     {
-        //
+        $trainer = Trainer::where("tid", $tid)->first();
+
+        $trainer->tname = $request->name;
+        $trainer->tphone = $request->phone;
+        $trainer->taddress = $request->address;
+        $trainer->gender = $request->gender; 
+        $trainer->taddress = $request->address; 
+        $trainer->doj = $request->doj;
+        $trainer->email = $request->email; 
+        $trainer->pan = $request->pan;
+        $trainer->salary = $request->salary;
+
+        if($request->gym == 'None'){
+            $trainer->gid = NULL;
+        }
+        else{
+            $mygym = Gym::where('gname', '=', $request->gym)->first();
+            if($mygym != NULL){
+                $trainer->gid = $mygym->gid;
+            }
+        }
+
+        $trainer->save();
+        
+        return redirect()->back();
     }
 
     /**
@@ -83,12 +109,14 @@ class TrainerController extends Controller
      */
     public function destroy(Trainer $trainer)
     {
-        //
+        $trainer->delete();
+        return redirect()->back();
     }
 
-    public function trainer_profile()
-    {
-        return view('trainers.tprofile');
+    public function profile()
+    {   
+        $gyms = Gym::all();
+        return view('trainers.tprofile')->with('gyms',$gyms);
     }
     
 }

@@ -1,4 +1,4 @@
-@extends('trainers.trainer-template')
+@extends('gyms.gym-template')
 
 @section('content')
     <!-- ============================================================== -->

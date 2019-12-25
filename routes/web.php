@@ -1,16 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/welcome', function () {
     return view('welcome');
 });
@@ -22,36 +11,47 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+//User Authentication Routes
 Route::get('/registration', 'Auth\UserRegisterController@index')->name('registration');
 Route::get('/signin', 'Auth\UserLoginController@index')->name('signin');
 Route::post('/registration', 'Auth\UserRegisterController@store');
 Route::post('/signin', 'Auth\UserLoginController@login');
 
-Route::resource('trainers','TrainerController');
-Route::resource('gyms','GymController');
-Route::resource('customers','CustomerController');
 
+//Trainers Routes
+Route::resource('trainers','TrainerController');
+Route::get('/tprofile','TrainerController@profile');
+
+
+//Gyms Routes
+Route::resource('gyms','GymController');
+Route::get('/gprofile','GymController@profile');
+Route::get('/gtrainers/{gid}','GymController@trainers');
+Route::get('/gcustomers/{gid}','GymController@customers');
+Route::get('/gtrainers/{tid}/edit','GymController@editTrainer');
+Route::get('/gcustomers/{tid}/edit','GymController@editCustomer');
+
+
+//Customers Routes
+Route::resource('customers','CustomerController');
+Route::get('/cprofile','CustomerController@profile');
+
+
+//AmpleAdmin Routes
 Route::get('/basic', function () {
     return view('layouts.dash.basic-table');
 });
-
 Route::get('/blank', function () {
     return view('layouts.dash.blank');
 });
-
 Route::get('/dashboar', function () {
     return view('layouts.dash.dashboard');
 });
-
 Route::get('/fontawesome', function () {
     return view('layouts.dash.fontawesome');
 });
-
 Route::get('/profile', function () {
     return view('layouts.dash.profile');
 });
 
-//Trainers
-
-
-Route::get('/tprofile','TrainerController@trainer_profile');

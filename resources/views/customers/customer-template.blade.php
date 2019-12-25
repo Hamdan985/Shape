@@ -36,7 +36,7 @@
             <div class="navbar-header">
                 <div class="top-left-part">
                     <!-- Logo -->
-                    <a class="logo" href="#">
+                    <a class="logo" href="/dashboar">
 
                     </a>
                 </div>
@@ -55,9 +55,9 @@
                     </li>
                     <li>
                         @php
-                            $trainer = Auth::user();
+                            $customer = Auth::user();
                         @endphp
-                        <a href="" class="profile-pic">Trainer {{ $trainer->tname }}</a>
+                        <a href="" class="profile-pic">{{ $customer->cname }}</a>
                     </li>
                 </ul>
             </div>
@@ -76,10 +76,10 @@
                 </div>
                 <ul class="nav" id="side-menu">
                     <li style="padding: 70px 0 0;">
-                        <a href="/trainers" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i>Dashboard</a>
+                        <a href="/customers" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i>Dashboard</a>
                     </li>
                     <li>
-                        <a href="/tprofile" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Profile</a>
+                        <a href="/cprofile" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Profile</a>
                     </li>
                     <li>
                         <a href="#" class="waves-effect"><i class="fa fa-table fa-fw" aria-hidden="true"></i>Basic Table</a>
@@ -110,7 +110,7 @@
         @yield('content')
 
          <!-- ============================================================== -->
-    <!-- All Jquery -->
+  <!-- All Jquery -->
     <!-- ============================================================== -->
     <script src="{{asset('dashboard/plugins/bower_components/jquery/dist/jquery.min.js')}}"></script>
     <!-- Bootstrap Core JavaScript -->

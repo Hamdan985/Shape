@@ -55,9 +55,9 @@
                     </li>
                     <li>
                         @php
-                            $trainer = Auth::user();
+                            $gym = Auth::user();
                         @endphp
-                        <a href="" class="profile-pic">Trainer {{ $trainer->tname }}</a>
+                        <a href="" class="profile-pic">{{ $gym->gname }}</a>
                     </li>
                 </ul>
             </div>
@@ -76,16 +76,19 @@
                 </div>
                 <ul class="nav" id="side-menu">
                     <li style="padding: 70px 0 0;">
-                        <a href="/trainers" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i>Dashboard</a>
+                        <a href="/gyms" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i>Dashboard</a>
                     </li>
                     <li>
-                        <a href="/tprofile" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Profile</a>
+                        <a href="/gprofile" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Profile</a>
                     </li>
                     <li>
-                        <a href="#" class="waves-effect"><i class="fa fa-table fa-fw" aria-hidden="true"></i>Basic Table</a>
+                        @php
+                            $gid = Auth::user()->gid;
+                        @endphp
+                        <a href="{{action('GymController@trainers',$gid)}}" class="waves-effect"><i class="fa fa-gears fa-fw" aria-hidden="true"></i>Trainers</a>
                     </li>
                     <li>
-                        <a href="#" class="waves-effect"><i class="fa fa-columns fa-fw" aria-hidden="true"></i>Blank Page</a>
+                        <a href="{{action('GymController@customers',$gid)}}" class="waves-effect"><i class="fa fa-group fa-fw" aria-hidden="true"></i>Members</a>
                     </li>
                     <li>
                         <a class="waves-effect" href="{{ route('logout') }}"
@@ -108,7 +111,7 @@
         <footer class="footer text-center"> 2019-2020 &copy; <span style="color:#1b68e4">Shape</span> Gyms. All rights reserved. </footer>
 
         @yield('content')
-
+    </div>
          <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->

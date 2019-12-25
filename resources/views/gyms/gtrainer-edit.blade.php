@@ -1,47 +1,24 @@
-@extends('trainers.trainer-template')
+@extends('gyms.gym-template')
 
 @section('content')
-<!-- ============================================================== -->
-        <!-- Page Content -->
-        <!-- ============================================================== -->
-        <div id="page-wrapper">
+    <div id="page-wrapper">
             <div class="container-fluid">
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Profile page</h4>
+                        <h4 class="page-title">Trainer Update</h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <ol class="breadcrumb">
-                            <li><a href="#">Dashboard</a></li>
-                            <li class="active">Profile Page</li>
+                            <li><a href="#">Trainer</a></li>
+                            <li class="active">Details</li>
                         </ol>
                     </div>
                 </div>
                 <!-- /.row -->
                 <!-- .row -->
                 <div class="row">
-                    <div class="col-md-4 col-xs-12">
-                        <div class="white-box">
-                            <div class="user-bg"> 
-                                <img width="100%" alt="user" src="img/strong.png">
-                                <div class="overlay-box">
-                                    <div class="user-content">
-                                    @php
-                                        $trainer = Auth::user();
-                                    @endphp
-                                        <h2 class="text-white">{{$trainer->tname}}</h2>
-                                        <h3 class="text-white">{{$trainer->email}}</h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="user-btm-box">
-                                    <h3><i class="fa fa-phone"></i> {{$trainer->tphone}}</h3>
-                                    <h3><i class="fa fa-globe"></i> {{$trainer->taddress}}</h3>
-                                    <h3><i class="fa fa-calendar"></i> {{$trainer->doj}}</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-8 col-xs-12">
+                    <div class="col-md-2 col-xs-2"></div>
+                    <div class="col-md-8 col-xs-8">
                         <div class="white-box">
                             <form action="{{action('TrainerController@update',$trainer->tid)}}" method="POST" class="form-horizontal form-material">
                                 @csrf
@@ -55,8 +32,7 @@
                                 <div class="form-group">
                                     <label for="email" class="col-md-12">Email</label>
                                     <div class="col-md-12">
-                                        <input type="email" value="{{$trainer->email}}"
-                                            class="form-control form-control-line" name="email"
+                                        <input type="email" value="{{$trainer->email}}" class="form-control form-control-line" name="email"
                                             id="example-email">
                                     </div>
                                 </div>
@@ -69,7 +45,7 @@
                                 <div class="form-group">
                                     <label for="gender" class="col-sm-12">Gender</label>
                                     <div class="col-sm-12">
-                                        <select name="gender" class="form-control form-control-line"  >
+                                        <select name="gender" class="form-control form-control-line">
                                             <option value="{{$trainer->gender}}">{{$trainer->gender}}</option>
                                             <option value="Male">Male</option>
                                             <option value="Female">Female</option>
@@ -83,34 +59,19 @@
                                         <input type="text" name="address" value="{{$trainer->taddress}}" class="form-control form-control-line"> 
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="gym" class="col-sm-12">Gym Name</label>
-                                    <div class="col-sm-12">
-                                        <select name="gym" class="form-control form-control-line">
-                                            @php
-                                                use App\Gym;
-                                                $mygym = Gym::where('gid', '=', $trainer->gid)->first();                                  
-                                            @endphp
-
-                                            @if ($mygym == NULL)
-                                                <option value="">None of these</option>
-                                            @else
-                                                <option value="{{$mygym->gname}}">{{$mygym->gname}}</option>
-                                            @endif
-
-                                            @foreach($gyms as $gym)
-                                                <option value="{{$gym->gname}}">{{$gym->gname}}</option>
-                                            @endforeach
-                                            <option value="None">None of these</option>                                                                                        
-                                        </select>
-                                    </div>
-                                </div>
+                            
                                 <div class="form-group">
                                     <label for="doj" class="col-md-12">Date of Joining</label>
                                     <div class="col-md-12">
                                         <input type="date" name="doj" value="{{$trainer->doj}}" class="form-control form-control-line"> 
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                        <label for="salary" class="col-md-12">Salary</label>
+                                        <div class="col-md-12">
+                                            <input type="salary" name="salary" value="{{$trainer->salary}}" class="form-control form-control-line"> 
+                                        </div>
+                                    </div>
                                 <div class="form-group">
                                     <label for="pan" class="col-md-12">PAN No.</label>
                                     <div class="col-md-12">

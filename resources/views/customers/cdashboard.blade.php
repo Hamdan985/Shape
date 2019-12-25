@@ -1,4 +1,4 @@
-@extends('layouts.dash.admin-template')
+@extends('customers.customer-template')
 
 @section('content')
     <!-- ============================================================== -->
@@ -11,7 +11,7 @@
                 <h4 class="page-title">Dashboard</h4> </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <ol class="breadcrumb">
-                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="">Dashboard</a></li>
                 </ol>
             </div>
             <!-- /.col-lg-12 -->
@@ -170,7 +170,9 @@
                             </div>
                             <div class="mail-contnet">
                                 <h5>Pavan kumar</h5><span class="time">10:20 AM   20  may 2016</span>
-                                <br/><span class="mail-desc">Donec ac condimentum massa. Etiam pellentesque pretium lacus. Phasellus ultricies dictum suscipit. Aenean commodo dui pellentesque molestie feugiat. Aenean commodo dui pellentesque molestie feugiat</span> <a href="javacript:void(0)" class="btn btn btn-rounded btn-default btn-outline m-r-5"><i class="ti-check text-success m-r-5"></i>Approve</a><a href="javacript:void(0)" class="btn-rounded btn btn-default btn-outline"><i class="ti-close text-danger m-r-5"></i> Reject</a>
+                                <br/><span class="mail-desc">Donec ac condimentum massa. Etiam pellentesque pretium lacus. Phasellus ultricies dictum suscipit. Aenean commodo dui pellentesque molestie feugiat. Aenean commodo dui pellentesque molestie feugiat</span>
+                                <a href="javacript:void(0)" class="btn btn btn-rounded btn-default btn-outline m-r-5"><i class="ti-check text-success m-r-5"></i>Approve</a>
+                                <a href="javacript:void(0)" class="btn-rounded btn btn-default btn-outline"><i class="ti-close text-danger m-r-5"></i> Reject</a>
                             </div>
                         </div>
                         <div class="comment-body">
@@ -179,6 +181,9 @@
                             <div class="mail-contnet">
                                 <h5>Sonu Nigam</h5><span class="time">10:20 AM   20  may 2016</span>
                                 <br/><span class="mail-desc">Donec ac condimentum massa. Etiam pellentesque pretium lacus. Phasellus ultricies dictum suscipit. Aenean commodo dui pellentesque molestie feugiat. Aenean commodo dui pellentesque molestie feugiat</span>
+                                <a href="javacript:void(0)" class="btn btn btn-rounded btn-default btn-outline m-r-5"><i class="ti-check text-success m-r-5"></i>Approve</a>
+                                <a href="javacript:void(0)" class="btn-rounded btn btn-default btn-outline"><i class="ti-close text-danger m-r-5"></i> Reject</a>
+                            
                             </div>
                         </div>
                         <div class="comment-body b-none">
@@ -187,6 +192,9 @@
                             <div class="mail-contnet">
                                 <h5>Arijit singh</h5><span class="time">10:20 AM   20  may 2016</span>
                                 <br/><span class="mail-desc">Donec ac condimentum massa. Etiam pellentesque pretium lacus. Phasellus ultricies dictum suscipit. Aenean commodo dui pellentesque molestie feugiat. Aenean commodo dui pellentesque molestie feugiat</span>
+                                <a href="javacript:void(0)" class="btn btn btn-rounded btn-default btn-outline m-r-5"><i class="ti-check text-success m-r-5"></i>Approve</a>
+                                <a href="javacript:void(0)" class="btn-rounded btn btn-default btn-outline"><i class="ti-close text-danger m-r-5"></i> Reject</a>
+                            
                             </div>
                         </div>
                     </div>
@@ -260,7 +268,6 @@
         </div>
     </div>
     <!-- /.container-fluid -->
-    <footer class="footer text-center"> 2017 &copy; Ample Admin brought to you by wrappixel.com </footer>
     </div>
     <!-- ============================================================== -->
     <!-- End Page Content -->

@@ -26,7 +26,7 @@
                                 <select class="form-control" name="role" id="role" required>
                                     <option value="">Select any one</option>
                                     <option value="Customer">Customer</option>
-                                    <option value="Gym">Gym Owner</option>
+                                    <option value="Gym">Gym</option>
                                     <option value="Trainer">Trainer</option>
                                 </select>
                             </div>

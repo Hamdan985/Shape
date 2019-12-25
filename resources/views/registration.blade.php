@@ -15,7 +15,9 @@
             <div class="col-sm-7 userform">
                 <div class="userform">
                 <h3 class="text-center" style="font-size:33px;">Register</h3>
-
+                @if($errors->any())
+                    <p class="alert alert-danger">{{$errors->first()}}</p>
+                @endif
                 <form action="/registration" method="POST">
                     @csrf
                     <div class="form-group row">
@@ -24,7 +26,7 @@
                             <select class="form-control" name="role" id="role" required>
                                 <option value="">Select any one</option>
                                 <option value="Customer">Customer</option>
-                                <option value="Gym">Gym Owner</option>
+                                <option value="Gym">Gym</option>
                                 <option value="Trainer">Trainer</option>
                             </select>
                         </div>
