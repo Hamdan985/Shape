@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Gym;
 use App\Trainer;
 use App\Customer;
+use App\Membership;
+
 use Illuminate\Http\Request;
 
 class GymController extends Controller
@@ -44,7 +46,10 @@ class GymController extends Controller
         $customer = Customer::where('cid',$cid)->first();
         return view('gyms.gcustomer-edit')->with('customer',$customer);
     }
-    
+    public function membership()
+    {
+        
+    }
     public function create()
     {
         //

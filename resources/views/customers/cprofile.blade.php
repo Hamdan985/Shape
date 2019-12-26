@@ -34,10 +34,16 @@
                                     </div>
                                 </div>
                             </div>
+                            @php
+                                use App\Gym;
+                                $mygym = Gym::where('gid', '=', $customer->gid)->first();                                  
+                            @endphp
                             <div class="user-btm-box">
                                     <h3><i class="fa fa-phone"></i> {{$customer->cphone}}</h3>
                                     <h3><i class="fa fa-globe"></i> {{$customer->caddress}}</h3>
-                                    <h3><i class="fa fa-calendar"></i> {{$customer->doj}}</h3>
+                                    @if ($mygym != NULL)
+                                        <h3><i class="fa fa-link"></i> {{$mygym->gname}}</h3>
+                                    @endif
                             </div>
                         </div>
                     </div>
@@ -83,14 +89,11 @@
                                         <input type="text" name="address" value="{{$customer->caddress}}" class="form-control form-control-line"> 
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     <label for="gym" class="col-sm-12">Gym Name</label>
                                     <div class="col-sm-12">
                                         <select name="gym" class="form-control form-control-line">
-                                            @php
-                                                use App\Gym;
-                                                $mygym = Gym::where('gid', '=', $customer->gid)->first();                                  
-                                            @endphp
+                                            
 
                                             @if ($mygym == NULL)
                                                 <option value="">None of these</option>
@@ -110,7 +113,7 @@
                                     <div class="col-md-12">
                                         <input type="date" name="doj" value="{{$customer->doj}}" class="form-control form-control-line"> 
                                     </div>
-                                </div>
+                                </div> --}}
                         
                                 <div class="form-group">
                                     <div class="col-sm-12">

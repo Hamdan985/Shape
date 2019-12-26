@@ -19,16 +19,9 @@ class CreateMembershipTable extends Migration
             $table->unsignedBigInteger('gid')->nullable();
             $table->foreign('gid')->references('gid')->on('gyms');
 
-            $table->unsignedBigInteger('cid')->nullable();
-            $table->foreign('cid')->references('cid')->on('customers');
-
             $table->string('type');
-            $table->date('startdate');
-            $table->date('enddate');
-            $table->string('duration')->nullable();
-            $table->string('status')->nullable();
-            $table->string('fees')->nullable();
-            $table->string('package')->nullable();
+            $table->string('duration');
+            $table->string('fees');
             $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
         });

@@ -82,10 +82,13 @@
                         <a href="/cprofile" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Profile</a>
                     </li>
                     <li>
-                        <a href="#" class="waves-effect"><i class="fa fa-table fa-fw" aria-hidden="true"></i>Basic Table</a>
+                        <a href="/findgyms" class="waves-effect"><i class="fa fa-arrows fa-fw" aria-hidden="true"></i>Find Gyms</a>
                     </li>
                     <li>
-                        <a href="#" class="waves-effect"><i class="fa fa-columns fa-fw" aria-hidden="true"></i>Blank Page</a>
+                        <a href="#" class="waves-effect"><i class="fa fa-gear fa-fw" aria-hidden="true"></i>Personal Training</a>
+                    </li>
+                    <li>
+                        <a href="#" class="waves-effect"><i class="fa fa-dashboard fa-fw" aria-hidden="true"></i>Progress</a>
                     </li>
                     <li>
                         <a class="waves-effect" href="{{ route('logout') }}"

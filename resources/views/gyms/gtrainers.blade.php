@@ -45,18 +45,15 @@
                                         <th>Phone</th>
                                         <th>Email Id</th>
                                         <th>Address</th>
-                                        <th>Gender</th>
-                                        <th>PAN No.</th>
                                         <th>Salary</th>
                                         <th>DOJ</th>
-                                        <th>Edit</th>
+                                        <th>Profile</th>
                                         <th>Remove</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @php
-                                        $no = 0;
-                                    @endphp
+                                    @php $no = 0; @endphp
+
                                     @foreach ($trainers as $t)
                                         <tr>
                                             <td>@php echo ++$no @endphp</td>
@@ -64,8 +61,6 @@
                                             <td>{{$t->tphone}}</td>
                                             <td>{{$t->email}}</td>
                                             <td>{{$t->taddress}}</td>
-                                            <td>{{$t->gender}}</td>
-                                            <td>{{$t->pan}}</td>
                                             <td>{{$t->salary}}</td>
                                             <td>{{$t->doj}}</td>
                                             <td><a href="{{action('GymController@editTrainer',$t)}}"><i class="fa fa-edit edit" aria-hidden="true"></i></a></td>

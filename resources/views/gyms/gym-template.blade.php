@@ -82,13 +82,14 @@
                         <a href="/gprofile" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Profile</a>
                     </li>
                     <li>
-                        @php
-                            $gid = Auth::user()->gid;
-                        @endphp
+                        @php $gid = Auth::user()->gid; @endphp                        
                         <a href="{{action('GymController@trainers',$gid)}}" class="waves-effect"><i class="fa fa-gears fa-fw" aria-hidden="true"></i>Trainers</a>
                     </li>
                     <li>
                         <a href="{{action('GymController@customers',$gid)}}" class="waves-effect"><i class="fa fa-group fa-fw" aria-hidden="true"></i>Members</a>
+                    </li>
+                    <li>
+                        <a href="/membership" class="waves-effect"><i class="fa fa-money fa-fw" aria-hidden="true"></i>Membership Plans</a>
                     </li>
                     <li>
                         <a class="waves-effect" href="{{ route('logout') }}"

@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Customer;
 use App\Gym;
-
+use App\Membership;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
     public function __construct(){
         $this->middleware('auth:customer',[
-            'except' => ['update','destroy']
+            'except' => ['update','destroy','findgyms']
         ]);
     }
     /**
@@ -23,7 +23,18 @@ class CustomerController extends Controller
     {
         return view('customers.cdashboard');
     }
+    public function profile()
+    {
+        $gyms = Gym::all();
+        return view('customers.cprofile')->with('gyms',$gyms);
+    }
 
+    public function findgyms(){
+        $gyms = Gym::all();
+        $memberships = Membership::all();
+        return view('findgyms')->with('gyms',$gyms)->with('memberships',$memberships);
+    }
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -114,9 +125,5 @@ class CustomerController extends Controller
         return redirect()->back();
     }
     
-    public function profile()
-    {
-        $gyms = Gym::all();
-        return view('customers.cprofile')->with('gyms',$gyms);;
-    }
+    
 }

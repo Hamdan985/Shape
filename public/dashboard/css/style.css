@@ -581,7 +581,7 @@ hr {
 }
 
 .text-primary {
-    color: #7460ee
+    color: #1b68e4
 }
 
 .text-megna {
@@ -597,7 +597,7 @@ hr {
 }
 
 .bg-primary {
-    background-color: #7460ee!important
+    background-color: #1b68e4!important
 }
 
 .bg-success {
@@ -684,7 +684,7 @@ hr {
 }
 
 .label-primary {
-    background-color: #7460ee
+    background-color: #1b68e4
 }
 
 .label-purple {
@@ -1271,8 +1271,8 @@ pre {
 
 .btn-primary,
 .btn-primary.disabled {
-    background: #7460ee;
-    border: 1px solid #7460ee
+    background: #1b68e4;
+    border: 1px solid #1b68e4
 }
 
 .btn-primary.disabled.focus,
@@ -1281,9 +1281,9 @@ pre {
 .btn-primary.focus,
 .btn-primary:focus,
 .btn-primary:hover {
-    background: #7460ee;
-    opacity: .8;
-    border: 1px solid #7460ee
+    background: #1b68e4;
+    opacity: .9;
+    border: 1px solid #1b68e4
 }
 
 .btn-success,
@@ -1382,14 +1382,14 @@ pre {
 }
 
 .btn-primary.btn-outline {
-    color: #7460ee;
+    color: #1b68e4;
     background-color: #fff
 }
 
 .btn-primary.btn-outline.focus,
 .btn-primary.btn-outline:focus,
 .btn-primary.btn-outline:hover {
-    background: #7460ee;
+    background: #1b68e4;
     color: #fff
 }
 
@@ -1536,8 +1536,8 @@ pre {
 .open>.dropdown-toggle.btn-primary.focus,
 .open>.dropdown-toggle.btn-primary:focus,
 .open>.dropdown-toggle.btn-primary:hover {
-    background-color: #7460ee;
-    border: 1px solid #7460ee
+    background-color: #1b68e4;
+    border: 1px solid #1b68e4
 }
 
 .btn-success.active.focus,
@@ -1863,14 +1863,14 @@ table.dataTable thead .sorting:after {
 
 .panel-darkblue,
 .panel-primary {
-    border-color: #7460ee
+    border-color: #1b68e4
 }
 
 .panel-darkblue .panel-heading,
 .panel-primary .panel-heading {
-    border-color: #7460ee;
+    border-color: #1b68e4;
     color: #fff;
-    background-color: #7460ee
+    background-color: #1b68e4
 }
 
 .panel-darkblue .panel-heading a,
@@ -1885,7 +1885,7 @@ table.dataTable thead .sorting:after {
 
 .panel-darkblue a,
 .panel-primary a {
-    color: #7460ee
+    color: #1b68e4
 }
 
 .panel-darkblue a:hover,
@@ -2522,8 +2522,8 @@ table.dataTable thead .sorting:after {
 }
 
 .checkbox-primary input[type=checkbox]:checked+label::before {
-    background-color: #7460ee;
-    border-color: #7460ee
+    background-color: #1b68e4;
+    border-color: #1b68e4
 }
 
 .checkbox-primary input[type=checkbox]:checked+label::after {
@@ -2678,15 +2678,15 @@ table.dataTable thead .sorting:after {
 }
 
 .radio-primary input[type=radio]+label::after {
-    background-color: #7460ee
+    background-color: #1b68e4
 }
 
 .radio-primary input[type=radio]:checked+label::before {
-    border-color: #7460ee
+    border-color: #1b68e4
 }
 
 .radio-primary input[type=radio]:checked+label::after {
-    background-color: #7460ee
+    background-color: #1b68e4
 }
 
 .radio-danger input[type=radio]+label::after {
@@ -3365,7 +3365,7 @@ ul.common li a:hover {
 }
 
 .user-bg .overlay-box {
-    background: #707cd2;
+    background: #1b68e4;
     opacity: .9;
     position: absolute;
     top: 0;
@@ -3965,7 +3965,7 @@ ul.common li a:hover {
 }
 
 .progress-bar-primary {
-    background-color: #7460ee
+    background-color: #1b68e4
 }
 
 .progress-bar-success {
@@ -4189,7 +4189,7 @@ ul.common li a:hover {
 }
 
 .timeline-badge.primary {
-    background-color: #7460ee!important
+    background-color: #1b68e4!important
 }
 
 .timeline-badge.success {
@@ -4430,7 +4430,7 @@ table.focus-on tbody tr.focused th {
 .form-material .form-control,
 .form-material .form-control.focus,
 .form-material .form-control:focus {
-    background-image: linear-gradient(#707cd2, #707cd2), linear-gradient(rgba(120, 130, 140, .13), rgba(120, 130, 140, .13));
+    background-image: linear-gradient(#1b68e4, #1b68e4), linear-gradient(rgba(120, 130, 140, .13), rgba(120, 130, 140, .13));
     border: 0;
     border-radius: 0;
     box-shadow: none;
@@ -4565,7 +4565,7 @@ table.focus-on tbody tr.focused th {
     color: #fff;
     font-size: 16px;
     line-height: 40px;
-    background: #7460ee;
+    background: #1b68e4;
     border-radius: 4px;
     padding: 10px 20px
 }
@@ -4582,14 +4582,14 @@ table.focus-on tbody tr.focused th {
     bottom: -15px;
     border-left: 16px solid transparent;
     border-right: 16px solid transparent;
-    border-top: 16px solid #7460ee
+    border-top: 16px solid #1b68e4
 }
 
 .gmaps-overlay_arrow.below {
     top: -15px;
     border-left: 16px solid transparent;
     border-right: 16px solid transparent;
-    border-bottom: 16px solid #7460ee
+    border-bottom: 16px solid #1b68e4
 }
 
 .jvectormap-zoomin,
@@ -5677,27 +5677,27 @@ ul.list-icons li i {
 .tooltip-primary+.tooltip .tooltip-inner,
 .tooltip-primary.tooltip .tooltip-inner {
     color: #fff;
-    background-color: #7460ee
+    background-color: #1b68e4
 }
 
 .tooltip-primary+.tooltip.top .tooltip-arrow,
 .tooltip-primary.tooltip.top .tooltip-arrow {
-    border-top-color: #7460ee
+    border-top-color: #1b68e4
 }
 
 .tooltip-primary+.tooltip.right .tooltip-arrow,
 .tooltip-primary.tooltip.right .tooltip-arrow {
-    border-right-color: #7460ee
+    border-right-color: #1b68e4
 }
 
 .tooltip-primary+.tooltip.bottom .tooltip-arrow,
 .tooltip-primary.tooltip.bottom .tooltip-arrow {
-    border-bottom-color: #7460ee
+    border-bottom-color: #1b68e4
 }
 
 .tooltip-primary+.tooltip.left .tooltip-arrow,
 .tooltip-primary.tooltip.left .tooltip-arrow {
-    border-left-color: #7460ee
+    border-left-color: #1b68e4
 }
 
 .tooltip-success+.tooltip .tooltip-inner,
@@ -5824,13 +5824,13 @@ ul.list-icons li i {
 
 .popover-primary+.popover .popover-title {
     color: #fff;
-    background-color: #7460ee;
-    border-color: #7460ee
+    background-color: #1b68e4;
+    border-color: #1b68e4
 }
 
 .popover-primary+.popover.bottom .arrow,
 .popover-primary+.popover.bottom .arrow:after {
-    border-bottom-color: #7460ee
+    border-bottom-color: #1b68e4
 }
 
 .popover-success+.popover .popover-title {
@@ -11467,7 +11467,7 @@ table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
 }
 
 .color-table.primary-table thead th {
-    background-color: #7460ee;
+    background-color: #1b68e4;
     color: #fff
 }
 
@@ -11517,11 +11517,11 @@ table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
 }
 
 .color-bordered-table.primary-bordered-table {
-    border: 2px solid #7460ee
+    border: 2px solid #1b68e4
 }
 
 .color-bordered-table.primary-bordered-table thead th {
-    background-color: #7460ee;
+    background-color: #1b68e4;
     color: #fff
 }
 
@@ -11611,7 +11611,7 @@ table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
 }
 
 .full-color-table.full-primary-table thead th {
-    background-color: #7460ee;
+    background-color: #1b68e4;
     border: 0!important;
     color: #fff
 }
@@ -11622,7 +11622,7 @@ table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
 }
 
 .full-color-table.full-primary-table tr:hover {
-    background-color: #7460ee
+    background-color: #1b68e4
 }
 
 .full-color-table.full-success-table {
@@ -11845,7 +11845,7 @@ table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
 .floating-labels .form-control:valid~label {
     top: -20px;
     font-size: 12px;
-    color: #7460ee
+    color: #1b68e4
 }
 
 .floating-labels .bar {
@@ -11860,7 +11860,7 @@ table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
     width: 0;
     bottom: 1px;
     position: absolute;
-    background: #7460ee;
+    background: #1b68e4;
     transition: .2s ease all;
     -moz-transition: .2s ease all;
     -webkit-transition: .2s ease all

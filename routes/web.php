@@ -32,10 +32,15 @@ Route::get('/gcustomers/{gid}','GymController@customers');
 Route::get('/gtrainers/{tid}/edit','GymController@editTrainer');
 Route::get('/gcustomers/{tid}/edit','GymController@editCustomer');
 
+//Membership Routes
+Route::resource('/membership','MembershipController');
 
 //Customers Routes
 Route::resource('customers','CustomerController');
 Route::get('/cprofile','CustomerController@profile');
+Route::get('/findgyms','CustomerController@findgyms');
+
+
 
 
 //AmpleAdmin Routes

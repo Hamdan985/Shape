@@ -16,22 +16,23 @@
     </button>
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav" style="margin-left:40%;">
-        <li class="nav-item mr-sm-5"><a class="nav-link" href="{{route('index')}}">Home</a></li>
-        <li class="nav-item mr-sm-5"><a class="nav-link" href="#services">Services</a></li>
+      <ul class="navbar-nav" id="index-nav">
+        <li class="nav-item mr-sm-5"><a class="nav-link" href="{{route('index')}}"><i class="fas fa-home"></i> Home</a></li>
+        <li class="nav-item mr-sm-5"><a class="nav-link" href="#services"><i class="fas fa-align-center"></i> Services</a></li>
+        <li class="nav-item mr-sm-5"><a class="nav-link" href="/findgyms"><i class="fas fa-dumbbell"></i> Gyms</a></li>
         
         @if(Auth::guard('customer')->check())
-        <li class="nav-item mr-sm-5"><a class="nav-link" href="/customers">Profile</a></li>
+        <li class="nav-item mr-sm-5"><a class="nav-link" href="/customers"><i class="far fa-address-card"></i> Profile</a></li>
 
         @elseif(Auth::guard('trainer')->check())
-        <li class="nav-item mr-sm-5"><a class="nav-link" href="/trainers">Profile</a></li>
+        <li class="nav-item mr-sm-5"><a class="nav-link" href="/trainers"><i class="far fa-address-card"></i> Profile</a></li>
 
         @elseif(Auth::guard('gym')->check())
-        <li class="nav-item mr-sm-5"><a class="nav-link" href="/gyms">Profile</a></li>
+        <li class="nav-item mr-sm-5"><a class="nav-link" href="/gyms"><i class="far fa-address-card"></i> Profile</a></li>
 
         @else
-        <li class="nav-item mr-sm-5"><a class="nav-link" href="{{route('signin')}}">Login</a></li>
-        <li class="nav-item mr-sm-5"><a class="nav-link" href="{{route('registration')}}">Register</a></li>      
+        <li class="nav-item mr-sm-5"><a class="nav-link" href="{{route('signin')}}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+        <li class="nav-item mr-sm-5"><a class="nav-link" href="{{route('registration')}}"><i class="fas fa-users-cog"></i> Register</a></li>      
         @endif
         </ul>
     </div>
@@ -111,6 +112,8 @@
         </div>
       </div>
     </div>
+    <a href="/findgyms" class="btn btn-warning btn-lg mt-3">Explore Gyms</a>
+
   </div>
 
   <!-- Register today -->

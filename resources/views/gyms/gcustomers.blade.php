@@ -43,12 +43,10 @@
                                             <th>No.</th>
                                             <th>Name</th>
                                             <th>Phone</th>
-                                            <th>Email Id</th>
                                             <th>Address</th>
-                                            <th>Gender</th>
                                             <th>Balance</th>
                                             <th>DOJ</th>
-                                            <th>Edit</th>
+                                            <th>Profile</th>
                                             <th>Remove</th>
                                         </tr>
                                     </thead>
@@ -61,11 +59,9 @@
                                                 <td>@php echo ++$no @endphp</td>
                                                 <td>{{$c->cname}}</td>
                                                 <td>{{$c->cphone}}</td>
-                                                <td>{{$c->email}}</td>
                                                 <td>{{$c->caddress}}</td>
-                                                <td>{{$c->gender}}</td>
-                                                <td>{{$c->balance}}</td>
                                                 <td>{{$c->doj}}</td>
+                                                <td>{{$c->balance}}</td>
                                                 <td>
                                                     <a href="{{action('GymController@editCustomer',$c)}}"><i class="fa fa-edit edit" aria-hidden="true"></i></a>
                                                 </td>
