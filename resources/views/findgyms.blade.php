@@ -85,7 +85,7 @@
                     
                 </div>
                 <div class="col-sm-3">
-                    <a href="" data-toggle="modal" data-target="#bookNowModal" class="gym-book btn btn-danger">Book Now</a>
+                <a href="{{action("CustomerController@bookgym",$g->gid)}}" class="gym-book btn btn-danger">Book Now</a>
                     <div class="gym-status">
                             <i class="far fa-clock"></i> <span class="text-success">OPEN</span>
                     </div>
@@ -94,39 +94,11 @@
           @endforeach
       </div>
   </div>
-  <div class="modal fade" id="bookNowModal" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Book your membership</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-              <form action="">
-                @csrf
-                <div class="form-group">
-                  <label for="type">Type</label>
-                  <select class="form-control" name="type" id="type">
-                    <option value="">Select any one</option>
-                    <option value="Silver">Silver (1 Month)</option>
-                    <option value="Gold">Gold (3 Months)</option>
-                    <option value="Platinum">Platinum (12 Months)</option>
-                  </select>
-                </div>  
-                <div class="form-group">
-                  <label for="startdate">Start Date</label>
-                  <input type="date"  class="form-control" name="startdate" id="startdate">
-                </div>
-                <input type="submit" value="Confirm Booking" class="btn btn-danger">
-              </form>
-          </div>
-        </div>
-      </div>
-    </div>
 
+
+  
   <footer>
     <p>&copy; 2019-2020 <span style="color:#1b68e4;">Shape</span>. All rights reserved.</p>
   </footer>
+
 @endsection

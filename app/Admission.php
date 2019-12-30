@@ -8,4 +8,5 @@ class Admission extends Model
 {
     protected $primaryKey = 'aid';  
     protected $guarded = []; 
+
 }

@@ -60,8 +60,8 @@
                                                 <td>{{$c->cname}}</td>
                                                 <td>{{$c->cphone}}</td>
                                                 <td>{{$c->caddress}}</td>
-                                                <td>{{$c->doj}}</td>
                                                 <td>{{$c->balance}}</td>
+                                                <td>{{$c->doj}}</td>
                                                 <td>
                                                     <a href="{{action('GymController@editCustomer',$c)}}"><i class="fa fa-edit edit" aria-hidden="true"></i></a>
                                                 </td>

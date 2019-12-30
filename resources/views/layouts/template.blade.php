@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Shape') }}</title>
-
+    <link rel="icon" href="img/strong.png">
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -20,10 +20,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:900i|Varela+Round&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="{{ asset('css/index.css')}}">
     <script src="https://kit.fontawesome.com/4763e7c55e.js" crossorigin="anonymous"></script>
-</head>
-
 <body>
     @yield('content')
 </body>

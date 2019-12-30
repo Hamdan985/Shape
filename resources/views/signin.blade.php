@@ -8,7 +8,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-3"></div>
-            <div class="col-sm-6 userform">
+            <div class="col-sm-6">
                 <div class="userform">
                     <h3 class="text-center" style="font-size:33px;">Login</h3>
 

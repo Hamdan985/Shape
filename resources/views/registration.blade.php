@@ -12,7 +12,7 @@
                 <h3 class="text-center">Get enrolled for free</h3>
 
             </div>
-            <div class="col-sm-7 userform">
+            <div class="col-sm-7">
                 <div class="userform">
                 <h3 class="text-center" style="font-size:33px;">Register</h3>
                 @if($errors->any())

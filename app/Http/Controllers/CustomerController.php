@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Customer;
 use App\Gym;
 use App\Membership;
+use App\Admission;
+use Auth;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
@@ -35,6 +37,13 @@ class CustomerController extends Controller
         return view('findgyms')->with('gyms',$gyms)->with('memberships',$memberships);
     }
     
+    public function bookgym($gid){
+
+        $gym = Gym::where('gid',$gid)->first();
+        $memberships = Membership::all();
+
+        return view('customers.bookgym')->with('gym',$gym)->with('memberships',$memberships);
+    }
     /**
      * Show the form for creating a new resource.
      *

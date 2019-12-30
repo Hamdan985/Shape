@@ -39,8 +39,8 @@ Route::resource('/membership','MembershipController');
 Route::resource('customers','CustomerController');
 Route::get('/cprofile','CustomerController@profile');
 Route::get('/findgyms','CustomerController@findgyms');
-
-
+Route::get('/bookgym/{gid}','CustomerController@bookgym');
+Route::resource('admission','AdmissionController');
 
 
 //AmpleAdmin Routes
