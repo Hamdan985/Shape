@@ -22,7 +22,7 @@ class UserRegisterController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-                'password'=>'required|min:8',
+                'password'=>'min:8',
         ]);
 
         //Trainer Register
@@ -36,8 +36,11 @@ class UserRegisterController extends Controller
                 $trainer->tphone = $request->phone;
                 $trainer->taddress = $request->address; 
                 $trainer->email = $request->email; 
+
+                if($request->password != NULL)
                 $trainer->password = Hash::make($request->password); 
-    
+                
+                $trainer->gid = $request->gid;
                 $trainer->save();
     
                 return redirect('trainers');
@@ -54,9 +57,12 @@ class UserRegisterController extends Controller
                 $customer->cname = $request->name;
                 $customer->cphone = $request->phone;
                 $customer->caddress = $request->address; 
-                $customer->email = $request->email; 
+                $customer->email = $request->email;
+
+                if($request->password != NULL)
                 $customer->password = Hash::make($request->password); 
-    
+                
+                $customer->gid = $request->gid;
                 $customer->save();
     
                 return redirect('customers');

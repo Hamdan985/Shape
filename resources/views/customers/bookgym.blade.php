@@ -28,7 +28,7 @@
           <div class="col-sm-4"></div>
           <div class="col-sm-4">
             <div class="userform">
-                <h3 class="text-center my-4" style="font-size:33px;">Book your gym</h3>
+                <h3 class="text-center my-4" style="font-size:28px;">Book your membership</h3>
 
                 <form action="/admission" method="POST">
                     @csrf

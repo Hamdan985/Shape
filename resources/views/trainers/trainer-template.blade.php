@@ -35,10 +35,7 @@
         <nav class="navbar navbar-default navbar-static-top m-b-0">
             <div class="navbar-header">
                 <div class="top-left-part">
-                    <!-- Logo -->
-                    <a class="logo" href="#">
-
-                    </a>
+                    <a href="/" style="margin-left:20%;"><span class="shape">Shape</span></a>
                 </div>
                 <!-- /Logo -->
                 <ul class="nav navbar-top-links navbar-right pull-right">
@@ -54,10 +51,8 @@
                         </form>
                     </li>
                     <li>
-                        @php
-                            $trainer = Auth::user();
-                        @endphp
-                        <a href="" class="profile-pic">Trainer {{ $trainer->tname }}</a>
+                        @php $trainer = Auth::user(); @endphp
+                        <a href="/tprofile" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Trainer {{ $trainer->tname }}</a>
                     </li>
                 </ul>
             </div>
@@ -76,10 +71,9 @@
                 </div>
                 <ul class="nav" id="side-menu">
                     <li style="padding: 70px 0 0;">
-                        <a href="/trainers" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i>Dashboard</a>
+                        <a href="/trainers" class="waves-effect"><i class="fa fa-dashboard fa-fw" aria-hidden="true"></i>Dashboard</a>
                     </li>
                     <li>
-                        <a href="/tprofile" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Profile</a>
                     </li>
                     <li>
                         <a href="#" class="waves-effect"><i class="fa fa-table fa-fw" aria-hidden="true"></i>Basic Table</a>

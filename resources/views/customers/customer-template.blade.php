@@ -35,12 +35,8 @@
         <nav class="navbar navbar-default navbar-static-top m-b-0">
             <div class="navbar-header">
                 <div class="top-left-part">
-                    <!-- Logo -->
-                    <a class="logo" href="/dashboar">
-
-                    </a>
+                    <a href="/" style="margin-left: 20%; "><span class="shape">Shape</span></a>
                 </div>
-                <!-- /Logo -->
                 <ul class="nav navbar-top-links navbar-right pull-right">
                     <li>
                         <a class="nav-toggler open-close waves-effect waves-light hidden-md hidden-lg" href="javascript:void(0)"><i class="fa fa-bars"></i></a>
@@ -54,32 +50,20 @@
                         </form>
                     </li>
                     <li>
-                        @php
-                            $customer = Auth::user();
-                        @endphp
-                        <a href="" class="profile-pic">{{ $customer->cname }}</a>
+                        @php $customer = Auth::user(); @endphp
+                        <a href="/cprofile" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>{{ $customer->cname }}</a>
                     </li>
                 </ul>
             </div>
-            <!-- /.navbar-header -->
-            <!-- /.navbar-top-links -->
-            <!-- /.navbar-static-side -->
         </nav>
-        <!-- End Top Navigation -->
-        <!-- ============================================================== -->
-        <!-- Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
         <div class="navbar-default sidebar" role="navigation">
             <div class="sidebar-nav slimscrollsidebar">
                 <div class="sidebar-head">
-                    <h3><span class="fa-fw open-close"><i class="ti-close ti-menu"></i></span> <span class="hide-menu shape">Shape</span></h3>
+                    <a href=""><span class="fa-fw open-close"><i class="ti-close ti-menu"></i></span> <span class="hide-menu shape">Shape</span></a>
                 </div>
                 <ul class="nav" id="side-menu">
                     <li style="padding: 70px 0 0;">
-                        <a href="/customers" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i>Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="/cprofile" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Profile</a>
+                        <a href="/customers" class="waves-effect"><i class="fa fa-dashboard fa-fw" aria-hidden="true"></i>Dashboard</a>
                     </li>
                     <li>
                         <a href="/findgyms" class="waves-effect"><i class="fa fa-arrows fa-fw" aria-hidden="true"></i>Find Gyms</a>
@@ -88,7 +72,7 @@
                         <a href="#" class="waves-effect"><i class="fa fa-gear fa-fw" aria-hidden="true"></i>Personal Training</a>
                     </li>
                     <li>
-                        <a href="#" class="waves-effect"><i class="fa fa-dashboard fa-fw" aria-hidden="true"></i>Progress</a>
+                        <a href="#" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i>Progress</a>
                     </li>
                     <li>
                         <a class="waves-effect" href="{{ route('logout') }}"
@@ -105,14 +89,12 @@
             </div>
             
         </div>
-        <!-- ============================================================== -->
-        <!-- End Left Sidebar -->
-        <!-- ============================================================== -->
+       
         <footer class="footer text-center"> 2019-2020 &copy; <span style="color:#1b68e4">Shape</span> Gyms. All rights reserved. </footer>
 
         @yield('content')
 
-         <!-- ============================================================== -->
+         
   <!-- All Jquery -->
     <!-- ============================================================== -->
     <script src="{{asset('dashboard/plugins/bower_components/jquery/dist/jquery.min.js')}}"></script>

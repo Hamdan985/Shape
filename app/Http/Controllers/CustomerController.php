@@ -104,7 +104,6 @@ class CustomerController extends Controller
         $customer->gender = $request->gender; 
         $customer->doj = $request->doj;
         $customer->email = $request->email; 
-        $customer->reference = $request->reference; 
         $customer->balance = $request->balance;
 
         if($request->gym == 'None'){

@@ -31,6 +31,8 @@ Route::get('/gtrainers/{gid}','GymController@trainers');
 Route::get('/gcustomers/{gid}','GymController@customers');
 Route::get('/gtrainers/{tid}/edit','GymController@editTrainer');
 Route::get('/gcustomers/{tid}/edit','GymController@editCustomer');
+Route::get('/addnew','GymController@addnew');
+
 
 //Membership Routes
 Route::resource('/membership','MembershipController');

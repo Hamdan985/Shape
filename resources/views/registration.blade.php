@@ -18,6 +18,7 @@
                 @if($errors->any())
                     <p class="alert alert-danger">{{$errors->first()}}</p>
                 @endif
+                
                 <form action="/registration" method="POST">
                     @csrf
                     <div class="form-group row">

@@ -34,10 +34,16 @@
                                     </div>
                                 </div>
                             </div>
+                            @php
+                                use App\Gym;
+                                $mygym = Gym::where('gid', '=', $trainer->gid)->first();                                  
+                            @endphp
                             <div class="user-btm-box">
                                     <h3><i class="fa fa-phone"></i> {{$trainer->tphone}}</h3>
                                     <h3><i class="fa fa-globe"></i> {{$trainer->taddress}}</h3>
-                                    <h3><i class="fa fa-calendar"></i> {{$trainer->doj}}</h3>
+                                    @if ($mygym != NULL)
+                                        <h3><i class="fa fa-link"></i> {{$mygym->gname}}</h3>
+                                    @endif
                             </div>
                         </div>
                     </div>
@@ -87,10 +93,7 @@
                                     <label for="gym" class="col-sm-12">Gym Name</label>
                                     <div class="col-sm-12">
                                         <select name="gym" class="form-control form-control-line">
-                                            @php
-                                                use App\Gym;
-                                                $mygym = Gym::where('gid', '=', $trainer->gid)->first();                                  
-                                            @endphp
+                                            
 
                                             @if ($mygym == NULL)
                                                 <option value="">None of these</option>

@@ -43,7 +43,6 @@
                                         <th>No.</th>
                                         <th>Name</th>
                                         <th>Phone</th>
-                                        <th>Email Id</th>
                                         <th>Address</th>
                                         <th>Salary</th>
                                         <th>DOJ</th>
@@ -59,7 +58,6 @@
                                             <td>@php echo ++$no @endphp</td>
                                             <td>{{$t->tname}}</td>
                                             <td>{{$t->tphone}}</td>
-                                            <td>{{$t->email}}</td>
                                             <td>{{$t->taddress}}</td>
                                             <td>{{$t->salary}}</td>
                                             <td>{{$t->doj}}</td>

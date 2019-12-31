@@ -35,10 +35,7 @@
         <nav class="navbar navbar-default navbar-static-top m-b-0">
             <div class="navbar-header">
                 <div class="top-left-part">
-                    <!-- Logo -->
-                    <a class="logo" href="#">
-
-                    </a>
+                        <a href="/" style="margin-left:20%;"><span class="shape">Shape</span></a>                    
                 </div>
                 <!-- /Logo -->
                 <ul class="nav navbar-top-links navbar-right pull-right">
@@ -57,36 +54,31 @@
                         @php
                             $gym = Auth::user();
                         @endphp
-                        <a href="" class="profile-pic">{{ $gym->gname }}</a>
+                        <a href="/gprofile" title="My Profile" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>{{ $gym->gname }}</a>
+
                     </li>
                 </ul>
             </div>
-            <!-- /.navbar-header -->
-            <!-- /.navbar-top-links -->
-            <!-- /.navbar-static-side -->
         </nav>
-        <!-- End Top Navigation -->
-        <!-- ============================================================== -->
-        <!-- Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
+
         <div class="navbar-default sidebar" role="navigation">
             <div class="sidebar-nav slimscrollsidebar">
                 <div class="sidebar-head">
-                    <h3><span class="fa-fw open-close"><i class="ti-close ti-menu"></i></span> <span class="hide-menu shape">Shape</span></h3>
+                    <a href="/"><span class="fa-fw open-close"><i class="ti-close ti-menu"></i></span> <span class="hide-menu shape">Shape</span></a>
                 </div>
                 <ul class="nav" id="side-menu">
                     <li style="padding: 70px 0 0;">
-                        <a href="/gyms" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i>Dashboard</a>
+                        <a href="/gyms" class="waves-effect"><i class="fa fa-dashboard fa-fw" aria-hidden="true"></i>Dashboard</a>
                     </li>
                     <li>
-                        <a href="/gprofile" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Profile</a>
+                        <a href="/addnew" class="waves-effect"><i class="fa fa-plus-square-o fa-fw" aria-hidden="true"></i>New member/trainer</a>
                     </li>
                     <li>
                         @php $gid = Auth::user()->gid; @endphp                        
-                        <a href="{{action('GymController@trainers',$gid)}}" class="waves-effect"><i class="fa fa-gears fa-fw" aria-hidden="true"></i>Trainers</a>
+                        <a href="{{action('GymController@customers',$gid)}}" class="waves-effect"><i class="fa fa-group fa-fw" aria-hidden="true"></i>Members</a>
                     </li>
                     <li>
-                        <a href="{{action('GymController@customers',$gid)}}" class="waves-effect"><i class="fa fa-group fa-fw" aria-hidden="true"></i>Members</a>
+                        <a href="{{action('GymController@trainers',$gid)}}" class="waves-effect"><i class="fa fa-male fa-fw" aria-hidden="true"></i>Trainers</a>
                     </li>
                     <li>
                         <a href="/membership" class="waves-effect"><i class="fa fa-money fa-fw" aria-hidden="true"></i>Membership Plans</a>

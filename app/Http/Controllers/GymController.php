@@ -6,7 +6,7 @@ use App\Gym;
 use App\Trainer;
 use App\Customer;
 use App\Membership;
-
+use Auth;
 use Illuminate\Http\Request;
 
 class GymController extends Controller
@@ -15,18 +15,22 @@ class GymController extends Controller
         $this->middleware('auth:gym');
     }
     
-    public function index()
-    {
-        return view('gyms.gdashboard');
+    public function index(){
+        $gid = Auth::user()->gid;
+        $trainers = Trainer::where('gid',$gid)->get();
+        $customers = Customer::where('gid',$gid)->get();
+
+        return view('gyms.gdashboard')->with('trainers',$trainers)->with('customers',$customers);
     }
 
-    public function profile()
-    {
+    public function profile(){
         return view('gyms.gprofile');
     }
 
-    public function trainers($gid)
-    {
+    public function addnew(){
+        return view('gyms.addnew');
+    }
+    public function trainers($gid){
         $trainers = Trainer::where('gid',$gid)->get();
         return view('gyms.gtrainers')->with('trainers',$trainers);
     }
@@ -36,8 +40,7 @@ class GymController extends Controller
         return view('gyms.gtrainer-edit')->with('trainer',$trainer);
     }
 
-    public function customers($gid)
-    {
+    public function customers($gid){
         $customers = Customer::where('gid',$gid)->get();
         return view('gyms.gcustomers')->with('customers',$customers);
     }
@@ -46,10 +49,8 @@ class GymController extends Controller
         $customer = Customer::where('cid',$cid)->first();
         return view('gyms.gcustomer-edit')->with('customer',$customer);
     }
-    public function membership()
-    {
-        
-    }
+
+
     public function create()
     {
         //
@@ -70,8 +71,7 @@ class GymController extends Controller
         
     }
 
-    public function update(Request $request, $gid)
-    {
+    public function update(Request $request, $gid){
         $gym = Gym::where("gid", $gid)->first();
 
         $gym->gname = $request->name;

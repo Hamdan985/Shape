@@ -19,7 +19,6 @@ class CreateCustomersTable extends Migration
             $table->string('caddress');
             $table->string('cphone')->unique();
             $table->string('gender')->nullable();
-            $table->string('reference')->nullable();
             $table->string('balance')->nullable();
             $table->date('doj')->nullable();
 
@@ -27,9 +26,8 @@ class CreateCustomersTable extends Migration
             $table->foreign('gid')->references('gid')->on('gyms');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('password')->nullable();
 
-            $table->string('flag')->nullable();
             $table->rememberToken();
             $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
