@@ -46,6 +46,22 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+
+        'trainer' => [
+            'driver' => 'session',
+            'provider' => 'trainer',
+        ],
+
+        'customer' => [
+            'driver' => 'session',
+            'provider' => 'customer',
+        ],
+
+        'gym' => [
+            'driver' => 'session',
+            'provider' => 'gym',
+        ],
+
     ],
 
     /*
@@ -75,6 +91,22 @@ return [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
+
+        'trainer' => [
+            'driver' => 'eloquent',
+            'model' => App\Trainer::class,
+        ],
+
+        'customer' => [
+            'driver' => 'eloquent',
+            'model' => App\Customer::class,
+        ],
+
+        'gym' => [
+            'driver' => 'eloquent',
+            'model' => App\Gym::class,
+        ],
+
     ],
 
     /*
@@ -95,6 +127,27 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+        'trainer' => [
+            'provider' => 'trainer',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+        'customer' => [
+            'provider' => 'customer',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+        'gym' => [
+            'provider' => 'gym',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
