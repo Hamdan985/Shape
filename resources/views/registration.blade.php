@@ -55,10 +55,10 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="address" class="col-sm-1"><i class="fas fa-map-marked-alt"></i></label>
+                        <label for="city" class="col-sm-1"><i class="fas fa-map-marked-alt"></i></label>
                         <div class="col-sm-11">
-                            <input type="text"  class="form-control @error('address') is-invalid @enderror" name="address" id="address" placeholder="Address" value="{{ old('address') }}" required>
-                            @error('address')
+                            <input type="text"  class="form-control @error('city') is-invalid @enderror" name="city" id="city" placeholder="City" value="{{ old('city') }}" required>
+                            @error('city')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>

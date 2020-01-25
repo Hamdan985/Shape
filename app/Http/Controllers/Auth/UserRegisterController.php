@@ -34,7 +34,7 @@ class UserRegisterController extends Controller
                 $trainer = new Trainer;
                 $trainer->tname = $request->name;
                 $trainer->tphone = $request->phone;
-                $trainer->taddress = $request->address; 
+                $trainer->tcity = $request->city; 
                 $trainer->email = $request->email; 
 
                 if($request->password != NULL)
@@ -56,7 +56,7 @@ class UserRegisterController extends Controller
                 $customer = new Customer;
                 $customer->cname = $request->name;
                 $customer->cphone = $request->phone;
-                $customer->caddress = $request->address; 
+                $customer->ccity = $request->city; 
                 $customer->email = $request->email;
 
                 if($request->password != NULL)
@@ -77,7 +77,7 @@ class UserRegisterController extends Controller
                 $gym = new Gym;
                 $gym->gname = $request->name;
                 $gym->gphone = $request->phone;
-                $gym->gaddress = $request->address; 
+                $gym->gcity = $request->city; 
                 $gym->email = $request->email; 
                 $gym->password = Hash::make($request->password); 
     

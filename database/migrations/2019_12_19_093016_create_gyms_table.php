@@ -16,7 +16,8 @@ class CreateGymsTable extends Migration
         Schema::create('gyms', function (Blueprint $table) {
             $table->bigIncrements('gid');
             $table->string('gname');
-            $table->string('gaddress');
+            $table->string('gaddress')->nullable();
+            $table->string('gcity');
             $table->string('gphone')->unique();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

@@ -40,7 +40,7 @@
                             @endphp
                             <div class="user-btm-box">
                                     <h3><i class="fa fa-phone"></i> {{$customer->cphone}}</h3>
-                                    <h3><i class="fa fa-globe"></i> {{$customer->caddress}}</h3>
+                                    <h3><i class="fa fa-globe"></i> {{$customer->ccity}}</h3>
                                     @if ($mygym != NULL)
                                         <h3><i class="fa fa-link"></i> {{$mygym->gname}}</h3>
                                     @endif

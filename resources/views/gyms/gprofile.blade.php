@@ -36,7 +36,7 @@
                             </div>
                             <div class="user-btm-box">
                                     <h3><i class="fa fa-phone"></i> {{$gym->gphone}}</h3>
-                                    <h3><i class="fa fa-globe"></i> {{$gym->gaddress}}</h3>
+                                    <h3><i class="fa fa-globe"></i> {{$gym->gcity}}</h3>
                             </div>
                         </div>
                     </div>

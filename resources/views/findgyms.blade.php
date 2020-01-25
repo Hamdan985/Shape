@@ -57,15 +57,15 @@
                 <div class="col-sm-2 gym-img text-center">
                     <img src="img/dumbbell.png" alt="gym">
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-3">
                         <div class="gym-name">
                             {{$g->gname}}
                         </div>
                         <div class="gym-address">
-                            <i class="fas fa-map-marker-alt"></i> {{$g->gaddress}}
+                            <i class="fas fa-map-marker-alt"></i> {{$g->gcity}}
                         </div>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-3">
                     <div class="gym-phone">
                             <i class="fas fa-phone-alt"></i> {{$g->gphone}}
                     </div>
@@ -73,7 +73,7 @@
                             <i class="far fa-envelope"></i> {{$g->email}}
                     </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                     <div class="gym-fees">
                         Membership plans : 
                         @foreach ($memberships as $m)
@@ -84,7 +84,7 @@
                     </div>
                     
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                 <a href="{{action("CustomerController@bookgym",$g->gid)}}" class="gym-book btn btn-danger">Book Now</a>
                     <div class="gym-status">
                             <i class="far fa-clock"></i> <span class="text-success">OPEN</span>
