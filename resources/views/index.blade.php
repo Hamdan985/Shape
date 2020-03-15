@@ -10,14 +10,14 @@
 
   <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
-    <a class="navbar-brand ml-sm-5" href="{{route('index')}}">Shape</a>
+    <a class="navbar-brand ml-sm-5" href="/">Shape</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav" id="index-nav">
-        <li class="nav-item mr-sm-5"><a class="nav-link" href="{{route('index')}}"><i class="fas fa-home"></i> Home</a></li>
+        <li class="nav-item mr-sm-5"><a class="nav-link" href="/"><i class="fas fa-home"></i> Home</a></li>
         <li class="nav-item mr-sm-5"><a class="nav-link" href="#services"><i class="fas fa-align-center"></i> Services</a></li>
         <li class="nav-item mr-sm-5"><a class="nav-link" href="/findgyms"><i class="fas fa-dumbbell"></i> Gyms</a></li>
         

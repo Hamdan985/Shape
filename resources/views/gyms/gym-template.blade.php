@@ -54,7 +54,7 @@
                         @php
                             $gym = Auth::user();
                         @endphp
-                        <a href="/gprofile" title="My Profile" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>{{ $gym->gname }}</a>
+                        <a href="/gyms/profile" title="My Profile" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>{{ $gym->gname }}</a>
 
                     </li>
                 </ul>
@@ -71,7 +71,7 @@
                         <a href="/gyms" class="waves-effect"><i class="fa fa-dashboard fa-fw" aria-hidden="true"></i>Dashboard</a>
                     </li>
                     <li>
-                        <a href="/addnew" class="waves-effect"><i class="fa fa-plus-square-o fa-fw" aria-hidden="true"></i>New member/trainer</a>
+                        <a href="/gyms/addnew" class="waves-effect"><i class="fa fa-plus-square-o fa-fw" aria-hidden="true"></i>New member/trainer</a>
                     </li>
                     <li>
                         @php $gid = Auth::user()->gid; @endphp                        

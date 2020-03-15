@@ -19,30 +19,37 @@ Route::post('/registration', 'Auth\UserRegisterController@store');
 Route::post('/signin', 'Auth\UserLoginController@login');
 
 
-//Trainers Routes
-Route::resource('trainers','TrainerController');
-Route::get('/tprofile','TrainerController@profile');
-
-
 //Gyms Routes
-Route::resource('gyms','GymController');
-Route::get('/gprofile','GymController@profile');
-Route::get('/gtrainers/{gid}','GymController@trainers');
-Route::get('/gcustomers/{gid}','GymController@customers');
-Route::get('/gtrainers/{tid}/edit','GymController@editTrainer');
-Route::get('/gcustomers/{tid}/edit','GymController@editCustomer');
-Route::get('/addnew','GymController@addnew');
+Route::prefix('gyms')->group(function () {
+    Route::resource('/','GymController');
+    Route::get('/profile','GymController@profile');
+    Route::get('/trainers/{gid}','GymController@trainers');
+    Route::get('/customers/{gid}','GymController@customers');
+    Route::get('/trainers/{tid}/edit','GymController@editTrainer');
+    Route::get('/customers/{tid}/edit','GymController@editCustomer');
+    Route::get('/addnew','GymController@addnew');
+});
 
 
 //Membership Routes
 Route::resource('/membership','MembershipController');
 
+
 //Customers Routes
-Route::resource('customers','CustomerController');
-Route::get('/cprofile','CustomerController@profile');
+Route::prefix('customers')->group(function () {
+    Route::resource('/','CustomerController');
+    Route::get('/profile','CustomerController@profile');
+    Route::get('/bookgym/{gid}','CustomerController@bookgym');
+    Route::resource('admission','AdmissionController');
+});
 Route::get('/findgyms','CustomerController@findgyms');
-Route::get('/bookgym/{gid}','CustomerController@bookgym');
-Route::resource('admission','AdmissionController');
+
+
+//Trainers Routes
+Route::prefix('trainers')->group(function (){
+    Route::resource('/','TrainerController');
+    Route::get('/profile','TrainerController@profile');
+});
 
 
 //AmpleAdmin Routes

@@ -51,7 +51,7 @@
                     </li>
                     <li>
                         @php $customer = Auth::user(); @endphp
-                        <a href="/cprofile" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>{{ $customer->cname }}</a>
+                        <a href="/customers/profile" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>{{ $customer->cname }}</a>
                     </li>
                 </ul>
             </div>

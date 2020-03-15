@@ -2,7 +2,7 @@
 
 @section('content')
     <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
-        <a class="navbar-brand ml-sm-5" href="{{route('index')}}">Shape</a>
+        <a class="navbar-brand ml-sm-5" href="/">Shape</a>
        
     </nav>
     <div class="container-fluid">
