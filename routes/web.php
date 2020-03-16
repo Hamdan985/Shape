@@ -9,8 +9,15 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//SuperAdmin Routes
+Route::prefix('home')->group(function () {
 
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/gym/{id}','HomeController@gymdetails');
+Route::get('/customer/{id}','HomeController@customerdetails');
+Route::get('/trainer/{id}','HomeController@trainerdetails');
+
+});
 
 //User Authentication Routes
 Route::get('/registration', 'Auth\UserRegisterController@index')->name('registration');
@@ -20,8 +27,9 @@ Route::post('/signin', 'Auth\UserLoginController@login');
 
 
 //Gyms Routes
-Route::prefix('gyms')->group(function () {
-    Route::resource('/','GymController');
+Route::resource('gyms','GymController');
+
+Route::prefix('gym')->group(function () {
     Route::get('/profile','GymController@profile');
     Route::get('/trainers/{gid}','GymController@trainers');
     Route::get('/customers/{gid}','GymController@customers');
@@ -36,8 +44,9 @@ Route::resource('/membership','MembershipController');
 
 
 //Customers Routes
-Route::prefix('customers')->group(function () {
-    Route::resource('/','CustomerController');
+Route::resource('customers','CustomerController');
+
+Route::prefix('customer')->group(function () {
     Route::get('/profile','CustomerController@profile');
     Route::get('/bookgym/{gid}','CustomerController@bookgym');
     Route::resource('admission','AdmissionController');
@@ -46,8 +55,9 @@ Route::get('/findgyms','CustomerController@findgyms');
 
 
 //Trainers Routes
-Route::prefix('trainers')->group(function (){
-    Route::resource('/','TrainerController');
+Route::resource('trainers','TrainerController');
+
+Route::prefix('trainer')->group(function (){
     Route::get('/profile','TrainerController@profile');
 });
 

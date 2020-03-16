@@ -13,6 +13,7 @@ class GymController extends Controller
 {
     public function __construct(){
         $this->middleware('auth:gym');
+
     }
     
     public function index(){
@@ -85,7 +86,8 @@ class GymController extends Controller
 
     public function destroy(Gym $gym)
     {
-        //
+        // $gym->delete();
+        // return redirect()->back();
     }
 
     

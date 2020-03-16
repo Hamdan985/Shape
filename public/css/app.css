@@ -11356,3 +11356,12 @@ a.text-dark:focus {
   }
 }
 
+#gyms-details, #customers-details, #trainers-details{
+  display: none;
+}
+.details{
+  font-size: 20px;
+}
+.details-label{
+  font-weight: bold;
+}

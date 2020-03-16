@@ -52,7 +52,7 @@
                     </li>
                     <li>
                         @php $trainer = Auth::user(); @endphp
-                        <a href="/trainers/profile" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Trainer {{ $trainer->tname }}</a>
+                        <a href="/trainer/profile" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Trainer {{ $trainer->tname }}</a>
                     </li>
                 </ul>
             </div>
