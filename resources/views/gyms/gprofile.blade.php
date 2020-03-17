@@ -23,14 +23,14 @@
                     <div class="col-md-4 col-xs-12">
                         <div class="white-box">
                             <div class="user-bg"> 
-                                <img width="100%" alt="user" src="img/strong.png">
+                                <img width="100%" alt="user" src="{{asset('img/strong.png')}}">
                                 <div class="overlay-box">
                                     <div class="user-content">
                                     @php
                                         $gym = Auth::user();
                                     @endphp
                                         <h2 class="text-white">{{$gym->gname}}</h2>
-                                        <h3 class="text-white">{{$gym->email}}</h3>
+                                        <h4 class="text-white">{{$gym->email}}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -65,7 +65,12 @@
                                         <input type="text" name="phone" value="{{$gym->gphone}}" class="form-control form-control-line"> 
                                     </div>
                                 </div>
-                                
+                                <div class="form-group">
+                                    <label for="city" class="col-md-12">City</label>
+                                    <div class="col-md-12">
+                                        <input type="text" name="city" value="{{$gym->gcity}}" class="form-control form-control-line"> 
+                                    </div>
+                                </div>
                                 <div class="form-group">
                                     <label for="address" class="col-md-12">Address</label>
                                     <div class="col-md-12">

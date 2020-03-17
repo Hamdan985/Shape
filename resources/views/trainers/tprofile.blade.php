@@ -23,20 +23,20 @@
                     <div class="col-md-4 col-xs-12">
                         <div class="white-box">
                             <div class="user-bg"> 
-                                <img width="100%" alt="user" src="img/strong.png">
+                                <img width="100%" alt="user" src="{{asset('img/strong.png')}}">
                                 <div class="overlay-box">
                                     <div class="user-content">
                                     @php
                                         $trainer = Auth::user();
                                     @endphp
                                         <h2 class="text-white">{{$trainer->tname}}</h2>
-                                        <h3 class="text-white">{{$trainer->email}}</h3>
+                                        <h4 class="text-white">{{$trainer->email}}</h4>
                                     </div>
                                 </div>
                             </div>
                             @php
                                 use App\Gym;
-                                $mygym = Gym::where('gid', '=', $trainer->gid)->first();                                  
+                                $mygym = Gym::where('gid',$trainer->gid)->first();                                  
                             @endphp
                             <div class="user-btm-box">
                                     <h3><i class="fa fa-phone"></i> {{$trainer->tphone}}</h3>

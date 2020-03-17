@@ -27,10 +27,15 @@
       <div class="row">
           <div class="col-sm-4"></div>
           <div class="col-sm-4">
+            @if ($error = $errors->first('membership'))
+                <div class="alert alert-danger">
+                    {{ $error }}
+                </div>
+            @endif
             <div class="userform">
                 <h3 class="text-center my-4" style="font-size:28px;">Book your membership</h3>
 
-                <form action="/admission" method="POST">
+                <form action="/customer/admission" method="POST" onsubmit="return confirm('Confirm Booking?')">
                     @csrf
                     <div class="form-group">
                         <label for="type">Type</label>

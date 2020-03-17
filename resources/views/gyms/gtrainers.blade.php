@@ -36,7 +36,7 @@
                                                 color:#1b68e4;
                                             }
                                             .remove{
-                                                font-size: 15px;
+                                                font-size: 16px;
                                                 color:red;
                                             }
                                         </style>

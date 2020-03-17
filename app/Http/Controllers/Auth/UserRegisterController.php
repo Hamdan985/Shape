@@ -38,7 +38,9 @@ class UserRegisterController extends Controller
                 $trainer->email = $request->email; 
 
                 if($request->password != NULL)
-                $trainer->password = Hash::make($request->password); 
+                    $trainer->password = Hash::make($request->password); 
+                else
+                    $trainer->password = Hash::make('12345678');
                 
                 $trainer->gid = $request->gid;
                 $trainer->save();
@@ -50,7 +52,7 @@ class UserRegisterController extends Controller
         //Customer Register
         if($request->role == 'Customer'){
             if (Customer::where('cphone', '=', $request->phone)->exists() or Customer::where('email', '=', $request->email)->exists()) {
-                return redirect()->back()->withErrors(['Email Id or Phone No. already exists']); 
+                return redirect()->back()->withErrors(['Email Id or Phone No already exists']); 
             }
             else{
                 $customer = new Customer;
@@ -60,8 +62,10 @@ class UserRegisterController extends Controller
                 $customer->email = $request->email;
 
                 if($request->password != NULL)
-                $customer->password = Hash::make($request->password); 
-                
+                    $customer->password = Hash::make($request->password); 
+                else
+                    $customer->password = Hash::make('12345678');
+
                 $customer->gid = $request->gid;
                 $customer->save();
     

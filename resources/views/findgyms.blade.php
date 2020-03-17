@@ -41,8 +41,9 @@
         <div class="col-sm-3"></div>
         <div class="search-bar col-sm-6">
             <h2>Find gyms near you</h2>
-            <form class="form-inline">
-                <input type="search" placeholder="Location" aria-label="Search">
+            <form action="/findgyms" method="POST" class="form-inline">
+              @csrf
+                <input name="search" type="search" placeholder="Location" aria-label="Search">
                 <button class="btn btn-warning btn-lg" type="submit">Search</button>
             </form>
         </div>
@@ -52,46 +53,52 @@
 
   <div class="container-fluid">
       <div class="row">
-          @foreach ($gyms as $g)
-            <div class="gym-details row">
-                <div class="col-sm-2 gym-img text-center">
-                    <img src="img/dumbbell.png" alt="gym">
-                </div>
-                <div class="col-sm-3">
-                        <div class="gym-name">
-                            {{$g->gname}}
-                        </div>
-                        <div class="gym-address">
-                            <i class="fas fa-map-marker-alt"></i> {{$g->gcity}}
-                        </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="gym-phone">
-                            <i class="fas fa-phone-alt"></i> {{$g->gphone}}
-                    </div>
-                    <div class="gym-email">
-                            <i class="far fa-envelope"></i> {{$g->email}}
-                    </div>
-                </div>
-                <div class="col-sm-2">
-                    <div class="gym-fees">
-                        Membership plans : 
-                        @foreach ($memberships as $m)
-                          @if ($m->gid == $g->gid)    
-                            <br>{{$m->type}} - {{$m->fees}} /-
-                          @endif
-                        @endforeach
-                    </div>
-                    
-                </div>
-                <div class="col-sm-2">
-                <a href="{{action("CustomerController@bookgym",$g->gid)}}" class="gym-book btn btn-danger">Book Now</a>
-                    <div class="gym-status">
-                            <i class="far fa-clock"></i> <span class="text-success">OPEN</span>
-                    </div>
-                </div>
-            </div>    
-          @endforeach
+          @if ($gyms->count() == 0)
+            <div class="gym-details text-center">      
+              <h3>No gyms found</h3>
+            </div>
+          @else
+            @foreach ($gyms as $g)
+              <div class="gym-details row">
+                  <div class="col-sm-2 gym-img text-center">
+                      <img src="img/dumbbell.png" alt="gym">
+                  </div>
+                  <div class="col-sm-3">
+                          <div class="gym-name">
+                              {{$g->gname}}
+                          </div>
+                          <div class="gym-address">
+                              <i class="fas fa-map-marker-alt"></i> {{$g->gcity}}
+                          </div>
+                  </div>
+                  <div class="col-sm-3">
+                      <div class="gym-phone">
+                              <i class="fas fa-phone-alt"></i> {{$g->gphone}}
+                      </div>
+                      <div class="gym-email">
+                              <i class="far fa-envelope"></i> {{$g->email}}
+                      </div>
+                  </div>
+                  <div class="col-sm-2">
+                      <div class="gym-fees">
+                          Membership plans : 
+                          @foreach ($memberships as $m)
+                            @if ($m->gid == $g->gid)    
+                              <br>{{$m->type}} - {{$m->fees}} /-
+                            @endif
+                          @endforeach
+                      </div>
+                      
+                  </div>
+                  <div class="col-sm-2">
+                      <a href="{{action("CustomerController@bookgym",$g->gid)}}" class="gym-book btn btn-danger">Book Now</a>
+                      <div class="gym-status">
+                              <i class="far fa-clock"></i> <span class="text-success">OPEN</span>
+                      </div>
+                  </div>
+              </div>    
+            @endforeach
+          @endif
       </div>
   </div>
 

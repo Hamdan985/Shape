@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Admission;
 use App\Membership;
 use App\Customer;
+use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\MessageBag;
+
 use Carbon\Carbon;
 
 class AdmissionController extends Controller
@@ -37,41 +40,50 @@ class AdmissionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $mid = $request->type;
+    {   
+        $cid = $request->cid;
+        $admission = Admission::where('cid',$cid)->first();
 
-        $add = new Admission;
-        $membership = Membership::where('mid',$mid)->first();
+        if($admission == NULL){
 
-        $c = Customer::where('cid',$request->cid)->first();
-        $c->gid = $membership->gid;
-        $c->doj = $request->startdate;
-        $c->balance  = $membership->fees;
-
-        $add->mid = $mid;
-        $add->cid = $request->cid; 
-        $add->startdate = $request->startdate;
-
-        $sd = Carbon::create($request->startdate);
-
-        if($membership->duration == '1 Month'){
-            $add->enddate = $sd->addDays(30);
+            $mid = $request->type;
+    
+            $add = new Admission;
+            $membership = Membership::where('mid',$mid)->first();
+    
+            $c = Customer::where('cid',$request->cid)->first();
+            $c->gid = $membership->gid;
+            $c->doj = $request->startdate;
+            $c->balance  = $membership->fees;
+    
+            $add->mid = $mid;
+            $add->cid = $request->cid; 
+            $add->startdate = $request->startdate;
+    
+            $sd = Carbon::create($request->startdate);
+    
+            if($membership->duration == '1 Month'){
+                $add->enddate = $sd->addDays(30);
+            }
+            if($membership->duration == '3 Months'){
+                $add->enddate = $sd->addDays(90);
+            }
+            if($membership->duration == '12 Months'){
+                $add->enddate = $sd->addDays(365);
+            }
+            
+            $add->status = 'active';
+            
+            $add->save();
+            $c->save();
+    
+    
+            return redirect('/customers');
         }
-        if($membership->duration == '3 Months'){
-            $add->enddate = $sd->addDays(90);
+        else{
+            $errors = new MessageBag(['membership' => ['Please complete or remove the current membership to proceed further.']]);
+            return redirect()->back()->withErrors($errors);
         }
-        if($membership->duration == '12 Months'){
-            $add->enddate = $sd->addDays(365);
-        }
-        
-        $add->status = 'active';
-        
-        $add->save();
-        $c->save();
-
-
-        // return redirect('customers');
-        return redirect()->back();
 
     }
 
@@ -117,6 +129,7 @@ class AdmissionController extends Controller
      */
     public function destroy(Admission $admission)
     {
-        //
+        $admission->delete();
+        return redirect()->back();
     }
 }

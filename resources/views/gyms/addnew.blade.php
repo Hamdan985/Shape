@@ -55,9 +55,9 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="address" class="col-sm-12">Address</label>
+                                <label for="city" class="col-sm-12">City</label>
                                 <div class="col-md-12">
-                                    <input type="text" name="address" class="form-control form-control-line" placeholder="Address" required>
+                                    <input type="text" name="city" class="form-control form-control-line" placeholder="City" required>
                                 </div>
                             </div>
                                 @php $gym = Auth::user() @endphp

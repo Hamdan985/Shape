@@ -23,7 +23,22 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        return view('customers.cdashboard');
+        
+        $cid = Auth::user()->cid;
+        $admission = Admission::where('cid',$cid)->first();
+
+        if($admission != NULL){
+
+            $membership = Membership::where('mid',$admission->mid)->first();
+            $gym = Gym::where('gid',$membership->gid)->first();
+    
+            $details = ['adm'=>$admission,'mem'=>$membership,'gym'=>$gym];
+            return view('customers.cdashboard')->with('details',$details);
+        }
+        else{
+            $details = NULL;
+            return view('customers.cdashboard')->with('details',$details);
+        }
     }
     public function profile()
     {
@@ -31,10 +46,16 @@ class CustomerController extends Controller
         return view('customers.cprofile')->with('gyms',$gyms);
     }
 
-    public function findgyms(){
-        $gyms = Gym::all();
+    public function findgyms(Request $request){
+
+        if($request->search == NULL)
+            $gyms = Gym::all();
+        else
+            $gyms = Gym::where('gcity','LIKE',"%{$request->search}%")->get();
+        
         $memberships = Membership::all();
         return view('findgyms')->with('gyms',$gyms)->with('memberships',$memberships);
+    
     }
     
     public function bookgym($gid){
@@ -100,6 +121,7 @@ class CustomerController extends Controller
 
         $customer->cname = $request->name;
         $customer->cphone = $request->phone;
+        $customer->ccity = $request->city;
         $customer->caddress = $request->address;
         $customer->gender = $request->gender; 
         $customer->doj = $request->doj;

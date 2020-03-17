@@ -4336,7 +4336,7 @@ ul.common li a:hover {
 }
 
 tbody {
-    color: #797979
+    color: rgb(80, 80, 80);
 }
 
 th {

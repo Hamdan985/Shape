@@ -43,10 +43,11 @@
     <div class="row">
       <div class="search-bar col-sm-6">
         <h2>Find gyms near you</h2>
-        <form class="form-inline">
-            <input type="search" placeholder="Location" aria-label="Search">
-            <button class="btn btn-warning btn-lg" type="submit">Search</button>
-        </form>
+            <form action="/findgyms" method="POST" class="form-inline">
+              @csrf
+                <input name="search" type="search" placeholder="Location" aria-label="Search">
+                <button class="btn btn-warning btn-lg" type="submit">Search</button>
+            </form>
       </div>
 
       <div class="col-sm-6 getshape">

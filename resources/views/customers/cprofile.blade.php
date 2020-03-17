@@ -23,14 +23,14 @@
                     <div class="col-md-4 col-xs-12">
                         <div class="white-box">
                             <div class="user-bg"> 
-                                <img width="100%" alt="user" src="img/strong.png">
+                                <img width="100%" alt="user" src="{{asset('img/strong.png')}}">
                                 <div class="overlay-box">
                                     <div class="user-content">
                                     @php
                                         $customer = Auth::user();
                                     @endphp
                                         <h2 class="text-white">{{$customer->cname}}</h2>
-                                        <h3 class="text-white">{{$customer->email}}</h3>
+                                        <h4 class="text-white">{{$customer->email}}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -81,6 +81,12 @@
                                             <option value="Female">Female</option>
                                             <option value="Other">Other</option>                                            
                                         </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="city" class="col-md-12">City</label>
+                                    <div class="col-md-12">
+                                        <input type="text" name="city" value="{{$customer->ccity}}" class="form-control form-control-line"> 
                                     </div>
                                 </div>
                                 <div class="form-group">

@@ -52,7 +52,7 @@ Route::prefix('customer')->group(function () {
     Route::resource('admission','AdmissionController');
 });
 Route::get('/findgyms','CustomerController@findgyms');
-
+Route::post('/findgyms','CustomerController@findgyms');
 
 //Trainers Routes
 Route::resource('trainers','TrainerController');

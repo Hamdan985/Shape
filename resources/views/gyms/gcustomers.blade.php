@@ -35,8 +35,8 @@
                                                     color:#1b68e4;
                                                 }
                                                 .remove{
-                                                    font-size: 20px;
-                                                    /* color:red; */
+                                                    font-size: 16px;
+                                                    color:red;
                                                 }
                                             </style>
                                             <th>No.</th>

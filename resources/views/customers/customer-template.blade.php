@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/png" sizes="16x16" href="dashboard/plugins/images/favicon.png">
+    <link rel="icon" href="img/strong.png">
+
     <title>Dashboard</title>
     <!-- Bootstrap Core CSS -->
     <link href="{{asset('dashboard/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">

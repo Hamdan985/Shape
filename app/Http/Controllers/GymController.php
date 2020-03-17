@@ -78,6 +78,7 @@ class GymController extends Controller
         $gym->gname = $request->name;
         $gym->gphone = $request->phone;
         $gym->gaddress = $request->address;
+        $gym->gcity = $request->city;
         $gym->email = $request->email; 
         $gym->save();
 
