@@ -77,10 +77,12 @@
                     <li>
                     </li>
                     <li>
-                        <a href="#" class="waves-effect"><i class="fa fa-table fa-fw" aria-hidden="true"></i>Basic Table</a>
+                        @php $gid = Auth::user()->gid; @endphp                  
+
+                        <a href="{{action('TrainerController@customers',$gid)}}" class="waves-effect"><i class="fa fa-group fa-fw" aria-hidden="true"></i>Members</a>
                     </li>
                     <li>
-                        <a href="#" class="waves-effect"><i class="fa fa-columns fa-fw" aria-hidden="true"></i>Blank Page</a>
+                        <a href="/dietplan/create" class="waves-effect"><i class="fa fa-columns fa-fw" aria-hidden="true"></i>Set Diet Plan</a>
                     </li>
                     <li>
                         <a class="waves-effect" href="{{ route('logout') }}"

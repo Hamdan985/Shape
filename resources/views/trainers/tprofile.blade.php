@@ -89,25 +89,7 @@
                                         <input type="text" name="address" value="{{$trainer->taddress}}" class="form-control form-control-line"> 
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="gym" class="col-sm-12">Gym Name</label>
-                                    <div class="col-sm-12">
-                                        <select name="gym" class="form-control form-control-line">
-                                            
-
-                                            @if ($mygym == NULL)
-                                                <option value="">None of these</option>
-                                            @else
-                                                <option value="{{$mygym->gname}}">{{$mygym->gname}}</option>
-                                            @endif
-
-                                            @foreach($gyms as $gym)
-                                                <option value="{{$gym->gname}}">{{$gym->gname}}</option>
-                                            @endforeach
-                                            <option value="None">None of these</option>                                                                                        
-                                        </select>
-                                    </div>
-                                </div>
+                              
                                 <div class="form-group">
                                     <label for="doj" class="col-md-12">Date of Joining</label>
                                     <div class="col-md-12">

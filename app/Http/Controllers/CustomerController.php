@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Customer;
+use App\Trainer;
 use App\Gym;
 use App\Membership;
 use App\Admission;
+use App\DietPlan;
+
 use Auth;
 use Illuminate\Http\Request;
 
@@ -65,6 +68,17 @@ class CustomerController extends Controller
 
         return view('customers.bookgym')->with('gym',$gym)->with('memberships',$memberships);
     }
+
+
+    public function viewdiet(){
+
+        $cid = Auth::user()->cid;
+        $dietplans = DietPlan::where('cid',$cid)->get();
+
+        return view('customers.viewdiet')->with('dietplans',$dietplans);
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *

@@ -73,6 +73,9 @@
                         <a href="#" class="waves-effect"><i class="fa fa-gear fa-fw" aria-hidden="true"></i>Personal Training</a>
                     </li>
                     <li>
+                        <a href="/customer/viewdiet" class="waves-effect"><i class="fa fa-columns fa-fw" aria-hidden="true"></i>View Diet Plan</a>
+                    </li>
+                    <li>
                         <a href="#" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i>Progress</a>
                     </li>
                     <li>

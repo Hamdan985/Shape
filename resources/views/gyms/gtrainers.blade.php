@@ -43,7 +43,6 @@
                                         <th>No.</th>
                                         <th>Name</th>
                                         <th>Phone</th>
-                                        <th>Address</th>
                                         <th>Salary</th>
                                         <th>DOJ</th>
                                         <th>Profile</th>
@@ -58,7 +57,6 @@
                                             <td>@php echo ++$no @endphp</td>
                                             <td>{{$t->tname}}</td>
                                             <td>{{$t->tphone}}</td>
-                                            <td>{{$t->taddress}}</td>
                                             <td>{{$t->salary}}</td>
                                             <td>{{$t->doj}}</td>
                                             <td><a href="{{action('GymController@editTrainer',$t)}}"><i class="fa fa-edit edit" aria-hidden="true"></i></a></td>

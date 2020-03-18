@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class DietPlan extends Model
 {
-    protected $primaryKey = 'dpid';
+    protected $table = 'dietplan';
+    protected $primaryKey = 'dpid';  
+    protected $guarded = [];   
     
 }

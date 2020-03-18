@@ -75,7 +75,7 @@
                         <a href="/gym/addnew" class="waves-effect"><i class="fa fa-plus-square-o fa-fw" aria-hidden="true"></i>New member/trainer</a>
                     </li>
                     <li>
-                        @php $gid = Auth::user()->gid; @endphp                        
+                        @php $gid = Auth::user()->gid; @endphp                  
                         <a href="{{action('GymController@customers',$gid)}}" class="waves-effect"><i class="fa fa-group fa-fw" aria-hidden="true"></i>Members</a>
                     </li>
                     <li>

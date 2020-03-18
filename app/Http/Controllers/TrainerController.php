@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Trainer;
 use App\Gym;
+use App\Customer;
+use Auth;
 use Illuminate\Http\Request;
 
 class TrainerController extends Controller
@@ -20,7 +22,17 @@ class TrainerController extends Controller
      */
     public function index()
     {
-        return view('trainers.tdashboard');
+        $tid = Auth::user()->tid;
+        $trainer = Trainer::where('tid',$tid)->first();
+        $gym = Gym::where('gid',$trainer->gid)->first();
+
+        return view('trainers.tdashboard')->with('trainer',$trainer)->with('gym',$gym);
+    }
+
+
+    public function customers($gid){
+        $customers = Customer::where('gid',$gid)->get();
+        return view('trainers.tcustomers')->with('customers',$customers);
     }
 
     /**
