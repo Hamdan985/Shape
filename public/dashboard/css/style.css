@@ -4336,12 +4336,12 @@ ul.common li a:hover {
 }
 
 tbody {
-    color: rgb(80, 80, 80);
+    color: rgb(50, 50, 50);
 }
 
 th {
-    color: #666;
-    font-weight: 500
+    color: rgb(0, 0, 0);
+    font-weight: lighter;
 }
 
 .table-bordered {
@@ -12568,4 +12568,17 @@ ul.pro-amenities li span i {
         margin: 10% auto 0;
         width: 300px
     }
+}
+
+
+.edit{
+    font-size: 20px;
+    color:#1b68e4;
+}
+.remove{
+    margin-top: -5px;
+    font-size: 20px;
+    color:red;
+    background: white;
+    border:none;
 }

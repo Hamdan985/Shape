@@ -29,13 +29,14 @@
                             <div class="form-group">
                                 <label for="role" class="col-sm-12">New Member or Trainer</label>
                                 <div class="col-sm-12">
-                                    <select name="role" class="form-control form-control-line" required>
+                                    <select name="role" onchange="showInput()" id="selectRole" class="form-control form-control-line" required>
                                         <option value="">Select any one</option>                                            
                                         <option value="Customer">Member</option>
                                         <option value="Trainer">Trainer</option>                                            
                                     </select>
                                 </div>
                             </div>
+                            
                             <div class="form-group">
                                 <label for="name" class="col-sm-12">Name</label>
                                 <div class="col-md-12">
@@ -60,6 +61,19 @@
                                     <input type="text" name="city" class="form-control form-control-line" placeholder="City" required>
                                 </div>
                             </div>
+
+                            <div class="form-group" id="membership" >
+                                <label for="type" class="col-sm-12">Membership Plan</label>
+                                <div class="col-sm-12">
+                                    <select  class="form-control form-control-line" name="type" required>
+                                        <option value="">Select any one</option>
+                                        @foreach ($memberships as $m)
+                                                <option value="{{$m->mid}}">{{$m->type}} ({{$m->duration}})</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+
                                 @php $gym = Auth::user() @endphp
                                 <input type="hidden" name="gid" value={{$gym->gid}}>     
                             <div class="form-group">
@@ -79,4 +93,23 @@
         <!-- /.container-fluid -->
     </div>
         <!-- /#page-wrapper -->
+    <style>
+        #membership{
+            display: none;
+        }
+    </style>
+    <script>
+        function showInput() {
+            var selectRole = document.getElementById("selectRole");
+            var selectedValue = selectRole.options[selectRole.selectedIndex].value;
+
+            if(selectedValue == "Customer"){
+                document.getElementById('membership').style.display = "inherit";
+            }
+            if(selectedValue == "Trainer"){
+                document.getElementById('membership').style.display = "none";
+            }
+        }
+
+    </script>
 @endsection

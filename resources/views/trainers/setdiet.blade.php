@@ -21,7 +21,7 @@
                 <div class="col-md-8 col-xs-8">
                     <div class="white-box">
                         
-                        <form action="/dietplan" method="POST" class="form-horizontal form-material">
+                        <form action="/trainer/dietplan" method="POST" class="form-horizontal form-material">
                             @csrf
                             <div class="form-group">
                                 <label for="role" class="col-sm-12">Select Member</label>

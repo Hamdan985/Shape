@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                     <ol class="breadcrumb">
-                        <li><a href="#">Member</a></li>
+                        <li><a href="/customers">Dashboard</a></li>
                         <li class="active">Diet Plan</li>
                     </ol>
                 </div>
@@ -47,7 +47,7 @@
                                             @php
                                                 $trainer = Trainer::where('tid',$dp->tid)->first();
                                             @endphp
-                                            <td>{{$trainer->tname}}</td>
+                                            <td style="font-weight : bold;">{{$trainer->tname}}</td>
                                             <td>{{$dp->morning}}</td>
                                             <td>{{$dp->afternoon}}</td>
                                             <td>{{$dp->evening}}</td>

@@ -21,7 +21,10 @@ class DietPlanController extends Controller
      */
     public function index()
     {   
-
+        $tid = Auth::user()->tid;
+        $dietplans = DietPlan::where('tid',$tid)->get();
+    
+        return view('trainers.viewdiet')->with('dietplans',$dietplans);
     }
 
     /**
@@ -36,7 +39,7 @@ class DietPlanController extends Controller
         $gym = Gym::where('gid',$trainer->gid)->first();
         $customers = Customer::where('gid',$gym->gid)->get();
 
-        return view('trainers.dietplan')->with('customers',$customers);
+        return view('trainers.setdiet')->with('customers',$customers);
         
     }
 
@@ -60,7 +63,7 @@ class DietPlanController extends Controller
 
         $dietplan->save();
 
-        return redirect()->back();
+        return redirect('/trainer/dietplan');
     }
 
     /**
@@ -82,7 +85,9 @@ class DietPlanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dietplan = DietPlan::where('dpid',$id)->first();
+        $customer = Customer::where('cid',$dietplan->cid)->first();
+        return view('trainers.editdiet')->with('dietplan',$dietplan)->with('customer',$customer);
     }
 
     /**
@@ -94,7 +99,16 @@ class DietPlanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $dietplan = DietPlan::where('dpid',$id)->first();
+
+        $dietplan->morning = $request->morning;
+        $dietplan->afternoon = $request->afternoon;
+        $dietplan->evening = $request->evening;
+        $dietplan->night = $request->night;
+
+        $dietplan->save();
+
+        return redirect('/trainer/dietplan');
     }
 
     /**
@@ -105,6 +119,8 @@ class DietPlanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $dietplan = DietPlan::where('dpid',$id)->first();
+        $dietplan->delete();
+        return redirect()->back();
     }
 }

@@ -4,7 +4,7 @@
   <!-- Email header -->
   <div class="container-fluid head">
     <div class="row">
-        <p>contactus.shape@gmail.com</p>
+        <a href="mailto:contactus.shape@gmail.com" target="_blank">contactus.shape@gmail.com</a>
     </div>
   </div>
 

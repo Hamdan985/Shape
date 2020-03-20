@@ -55,10 +55,10 @@ body {
   background: #01c0c8;
 }
 #side-menu li a {
-  color: #54667a;
+  color: #374657;
 }
 #side-menu li a {
-  color: #54667a;
+  color: #374657;
   border-left: 0px solid #fff;
 }
 #side-menu > li > a {
@@ -78,11 +78,11 @@ body {
   color: #1b68e4;
 }
 #side-menu ul > li > a.active {
-  color: #54667a;
-  font-weight: 500;
+  color: #374657;
+  font-weight: bolder;
 }
 .user-profile .user-pro-body .u-dropdown {
-  color: #54667a;
+  color: #374657;
 }
 /*themecolor*/
 .bg-theme {

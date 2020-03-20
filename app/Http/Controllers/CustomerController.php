@@ -135,7 +135,6 @@ class CustomerController extends Controller
 
         $customer->cname = $request->name;
         $customer->cphone = $request->phone;
-        $customer->ccity = $request->city;
         $customer->caddress = $request->address;
         $customer->gender = $request->gender; 
         $customer->doj = $request->doj;

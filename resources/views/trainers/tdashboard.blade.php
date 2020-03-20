@@ -30,19 +30,6 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <style>
-                                                .table th{
-                                                    color:black;
-                                                }
-                                                .edit{
-                                                    font-size: 20px;
-                                                    color:#1b68e4;
-                                                }
-                                                .remove{
-                                                    font-size: 16px;
-                                                    color:red;
-                                                }
-                                            </style>
                                             <th>Gym Name</th>
                                             <th>Salary</th>
                                             <th>Date of Joining</th>
@@ -56,7 +43,7 @@
                                             <td>{{$trainer->doj}}</td>
                                             
                                             <td>
-                                                <button title="Remove membership" type="submit"><i class="fa fa-trash-o remove" aria-hidden="true"></i></button>
+                                                <button title="Remove membership" type="submit" class="remove"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                             </td>   
                                         </tr>
                                     </tbody>

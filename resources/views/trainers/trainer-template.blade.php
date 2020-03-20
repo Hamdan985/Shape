@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="img/strong.png">
+    <link rel="icon" href="{{asset('img/strong.png')}}">
 
     <title>Dashboard</title>
     <!-- Bootstrap Core CSS -->
@@ -82,7 +82,7 @@
                         <a href="{{action('TrainerController@customers',$gid)}}" class="waves-effect"><i class="fa fa-group fa-fw" aria-hidden="true"></i>Members</a>
                     </li>
                     <li>
-                        <a href="/dietplan/create" class="waves-effect"><i class="fa fa-columns fa-fw" aria-hidden="true"></i>Set Diet Plan</a>
+                        <a href="/trainer/dietplan" class="waves-effect"><i class="fa fa-spoon fa-fw" aria-hidden="true"></i>Diet Plans</a>
                     </li>
                     <li>
                         <a class="waves-effect" href="{{ route('logout') }}"

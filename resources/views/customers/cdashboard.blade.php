@@ -31,19 +31,6 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <style>
-                                                .table th{
-                                                    color:black;
-                                                }
-                                                .edit{
-                                                    font-size: 20px;
-                                                    color:#1b68e4;
-                                                }
-                                                .remove{
-                                                    font-size: 16px;
-                                                    color:red;
-                                                }
-                                            </style>
                                             <th>Gym Name</th>
                                             <th>Membership Type</th>
                                             <th>Duration</th>
@@ -69,7 +56,7 @@
                                                     <form action="{{action('AdmissionController@destroy',$details['adm'])}}" method="POST" onsubmit="return confirm('Remove Membership ?')">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button title="Remove membership" type="submit"><i class="fa fa-trash-o remove" aria-hidden="true"></i></button>
+                                                        <button title="Remove membership" class="remove" type="submit"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                                     </form>
                                                 </td>   
                                             </tr>

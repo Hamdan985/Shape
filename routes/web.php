@@ -3,11 +3,13 @@
 Route::get('/welcome', function () {
     return view('welcome');
 });
-Route::get('/', function () {
-    return view('index');
-})->name('index');
 
 Auth::routes();
+
+//Index Routes
+Route::view('/','index')->name('index');
+Route::get('/findgyms','CustomerController@findgyms');
+Route::post('/findgyms','CustomerController@findgyms');
 
 
 //SuperAdmin Routes
@@ -26,7 +28,7 @@ Route::post('/registration', 'Auth\UserRegisterController@store');
 Route::post('/signin', 'Auth\UserLoginController@login');
 
 
-//Gyms Routes
+//Gym Routes
 Route::resource('gyms','GymController');
 Route::prefix('gym')->group(function () {
     Route::get('/profile','GymController@profile');
@@ -35,35 +37,31 @@ Route::prefix('gym')->group(function () {
     Route::get('/trainers/{id}/edit','GymController@editTrainer');
     Route::get('/customers/{id}/edit','GymController@editCustomer');
     Route::get('/addnew','GymController@addnew');
+    Route::resource('membership','MembershipController');
 });
 
 
-//Customers Routes
+//Customer Routes
 Route::resource('customers','CustomerController');
 Route::prefix('customer')->group(function () {
     Route::get('/profile','CustomerController@profile');
     Route::get('/bookgym/{id}','CustomerController@bookgym');
     Route::get('/viewdiet','CustomerController@viewdiet');
-    Route::resource('admission','AdmissionController');
+    Route::resource('/admission','AdmissionController');
 });
-Route::get('/findgyms','CustomerController@findgyms');
-Route::post('/findgyms','CustomerController@findgyms');
 
 
-//Trainers Routes
-Route::resource('trainers','TrainerController');
+//Trainer Routes
+Route::resource('/trainers','TrainerController');
 Route::prefix('trainer')->group(function (){
     Route::get('/profile','TrainerController@profile');
     Route::get('/customers/{id}','TrainerController@customers');
+    Route::resource('/dietplan','DietPlanController');
 });
 
 
-//DietPlan Routes
-Route::resource('/dietplan','DietPlanController');
 
 
-//Membership Routes
-Route::resource('/membership','MembershipController');
 
 
 

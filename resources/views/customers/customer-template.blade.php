@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="img/strong.png">
+    <link rel="icon" href="{{asset('img/strong.png')}}">
 
     <title>Dashboard</title>
     <!-- Bootstrap Core CSS -->
@@ -73,7 +73,7 @@
                         <a href="#" class="waves-effect"><i class="fa fa-gear fa-fw" aria-hidden="true"></i>Personal Training</a>
                     </li>
                     <li>
-                        <a href="/customer/viewdiet" class="waves-effect"><i class="fa fa-columns fa-fw" aria-hidden="true"></i>View Diet Plan</a>
+                        <a href="/customer/viewdiet" class="waves-effect"><i class="fa fa-spoon fa-fw" aria-hidden="true"></i>Diet Plans</a>
                     </li>
                     <li>
                         <a href="#" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i>Progress</a>

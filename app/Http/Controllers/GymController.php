@@ -17,6 +17,7 @@ class GymController extends Controller
     }
     
     public function index(){
+        
         $gid = Auth::user()->gid;
         $trainers = Trainer::where('gid',$gid)->get();
         $customers = Customer::where('gid',$gid)->get();
@@ -29,8 +30,11 @@ class GymController extends Controller
     }
 
     public function addnew(){
-        return view('gyms.addnew');
+        $gid = Auth::user()->gid;
+        $memberships = Membership::where('gid',$gid)->get();
+        return view('gyms.addnew')->with('memberships',$memberships);
     }
+
     public function trainers($gid){
         $trainers = Trainer::where('gid',$gid)->get();
         return view('gyms.gtrainers')->with('trainers',$trainers);
@@ -79,7 +83,8 @@ class GymController extends Controller
         $gym->gphone = $request->phone;
         $gym->gaddress = $request->address;
         $gym->gcity = $request->city;
-        $gym->email = $request->email; 
+        $gym->email = $request->email;
+         
         $gym->save();
 
         return redirect()->back();

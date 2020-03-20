@@ -12,7 +12,7 @@
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <ol class="breadcrumb">
-                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="/trainers">Dashboard</a></li>
                             <li class="active">Profile Page</li>
                         </ol>
                     </div>
@@ -81,6 +81,12 @@
                                             <option value="Female">Female</option>
                                             <option value="Other">Other</option>                                            
                                         </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="city" class="col-md-12">City</label>
+                                    <div class="col-md-12">
+                                        <input type="text" name="city" value="{{$trainer->tcity}}" class="form-control form-control-line"> 
                                     </div>
                                 </div>
                                 <div class="form-group">

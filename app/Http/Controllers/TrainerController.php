@@ -29,7 +29,12 @@ class TrainerController extends Controller
         return view('trainers.tdashboard')->with('trainer',$trainer)->with('gym',$gym);
     }
 
-
+    public function profile()
+    {   
+        $gyms = Gym::all();
+        return view('trainers.tprofile')->with('gyms',$gyms);
+    }
+    
     public function customers($gid){
         $customers = Customer::where('gid',$gid)->get();
         return view('trainers.tcustomers')->with('customers',$customers);
@@ -92,7 +97,7 @@ class TrainerController extends Controller
         $trainer->tphone = $request->phone;
         $trainer->taddress = $request->address;
         $trainer->gender = $request->gender; 
-        $trainer->taddress = $request->address; 
+        $trainer->tcity = $request->city; 
         $trainer->doj = $request->doj;
         $trainer->email = $request->email; 
         $trainer->pan = $request->pan;
@@ -125,10 +130,6 @@ class TrainerController extends Controller
         return redirect()->back();
     }
 
-    public function profile()
-    {   
-        $gyms = Gym::all();
-        return view('trainers.tprofile')->with('gyms',$gyms);
-    }
+    
     
 }

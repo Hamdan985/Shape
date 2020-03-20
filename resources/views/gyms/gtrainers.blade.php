@@ -27,19 +27,7 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <style>
-                                            .table th{
-                                                color:black;
-                                            }
-                                            .edit{
-                                                font-size: 20px;
-                                                color:#1b68e4;
-                                            }
-                                            .remove{
-                                                font-size: 16px;
-                                                color:red;
-                                            }
-                                        </style>
+                                        
                                         <th>No.</th>
                                         <th>Name</th>
                                         <th>Phone</th>
@@ -61,10 +49,10 @@
                                             <td>{{$t->doj}}</td>
                                             <td><a href="{{action('GymController@editTrainer',$t)}}"><i class="fa fa-edit edit" aria-hidden="true"></i></a></td>
                                             <td>
-                                                <form action="{{action('TrainerController@destroy',$t)}}" method="POST" onsubmit="return confirm('Remove Trainer ?')">
+                                                <form action="{{action('TrainerController@destroy',$t)}}" method="POST" onsubmit="return confirm('Remove Trainer?')">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit"><i class="fa fa-trash remove" aria-hidden="true"></i></button>
+                                                    <button type="submit" class="remove"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                                 </form>
                                             </td>
                                         </tr>   

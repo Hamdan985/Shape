@@ -26,19 +26,7 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <style>
-                                                .table th{
-                                                    color:black;
-                                                }
-                                                .edit{
-                                                    font-size: 20px;
-                                                    color:#1b68e4;
-                                                }
-                                                .remove{
-                                                    font-size: 16px;
-                                                    color:red;
-                                                }
-                                            </style>
+                                            
                                             <th>No.</th>
                                             <th>Name</th>
                                             <th>Phone</th>
@@ -68,10 +56,10 @@
                                                     <a title="Profile" href="{{action('GymController@editCustomer',$c)}}"><i class="fa fa-edit edit" aria-hidden="true"></i></a>
                                                 </td>
                                                 <td>
-                                                    <form action="{{action('CustomerController@destroy',$c)}}" method="POST" onsubmit="return confirm('Remove Member ?')">
+                                                    <form action="{{action('CustomerController@destroy',$c)}}" method="POST" onsubmit="return confirm('Remove Member?')">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button title="Remove member" type="submit"><i class="fa fa-trash-o remove" aria-hidden="true"></i></button>
+                                                        <button title="Remove member" type="submit" class="remove"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                                     </form>
                                                 </td>                                           
                                             </tr>      

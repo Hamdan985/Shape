@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="col-md-6 col-xs-6">
                     <div class="white-box">
-                        <form action="/membership" method="POST" class="form-horizontal form-material">
+                        <form action="/gym/membership" method="POST" class="form-horizontal form-material">
                             @csrf
                             <div class="form-group">
                                 <label for="type" class="col-sm-12">Type</label>
@@ -66,15 +66,7 @@
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
-                                    <style>
-                                        .table th{
-                                            color:black;
-                                        }
-                                        .remove{
-                                            font-size: 15px;
-                                            color:red;
-                                        }
-                                    </style>
+                                    
                                     <tr>
                                         <th>No.</th>
                                         <th>Type</th>
@@ -95,10 +87,10 @@
                                                 <td>{{$m->duration}}</td>
                                                 <td>{{$m->fees}}</td>
                                                 <td>
-                                                    <form action="{{action('MembershipController@destroy',$m->mid)}}" method="POST" onsubmit="return confirm('Remove Membership Plan ?')">
+                                                    <form action="{{action('MembershipController@destroy',$m->mid)}}" method="POST" onsubmit="return confirm('Remove Membership Plan?')">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button type="submit"><i class="fa fa-trash remove" aria-hidden="true"></i></button>
+                                                        <button type="submit" class="remove"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                                     </form>
                                                 </td>
                                             </tr>

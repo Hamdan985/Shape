@@ -11,7 +11,7 @@
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <ol class="breadcrumb">
-                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="#">Dashobard</a></li>
                             <li class="active">Members</li>
                         </ol>
                     </div>
@@ -26,19 +26,6 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <style>
-                                                .table th{
-                                                    color:black;
-                                                }
-                                                .edit{
-                                                    font-size: 20px;
-                                                    color:#1b68e4;
-                                                }
-                                                .remove{
-                                                    font-size: 16px;
-                                                    color:red;
-                                                }
-                                            </style>
                                             <th>No.</th>
                                             <th>Name</th>
                                             <th>Phone</th>
