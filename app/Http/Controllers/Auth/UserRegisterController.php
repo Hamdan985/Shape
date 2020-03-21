@@ -28,7 +28,7 @@ class UserRegisterController extends Controller
         //Trainer Register
         if($request->role == 'Trainer'){
             if (Trainer::where('tphone', '=', $request->phone)->exists() or Trainer::where('email', '=', $request->email)->exists()) {
-                return redirect()->back()->withErrors(['Email Id or Phone No. already exists']); 
+                return redirect()->back()->withErrors(['invalid'=>'Email Id or Phone No. already exists']); 
             }
             else{
                 $trainer = new Trainer;
@@ -52,7 +52,7 @@ class UserRegisterController extends Controller
         //Customer Register
         if($request->role == 'Customer'){
             if (Customer::where('cphone', '=', $request->phone)->exists() or Customer::where('email', '=', $request->email)->exists()) {
-                return redirect()->back()->withErrors(['Email Id or Phone No already exists']); 
+                return redirect()->back()->withErrors(['invalid'=>'Email Id or Phone No already exists']); 
             }
             else{
                 $customer = new Customer;
@@ -76,7 +76,7 @@ class UserRegisterController extends Controller
         //Gym Register
         if($request->role == 'Gym'){
             if (Gym::where('gphone', '=', $request->phone)->exists() or Gym::where('email', '=', $request->email)->exists()) {
-                return redirect()->back()->withErrors(['Email Id or Phone No. already exists']); 
+                return redirect()->back()->withErrors(['invalid'=>'Email Id or Phone No. already exists']); 
             }else{
                 $gym = new Gym;
                 $gym->gname = $request->name;

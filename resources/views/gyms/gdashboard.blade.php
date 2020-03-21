@@ -8,47 +8,65 @@
                 <h4 class="page-title">Dashboard</h4> </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <ol class="breadcrumb">
-                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="/gyms">Dashboard</a></li>
                 </ol>
             </div>
         </div>
-        
         <div class="row">
             <div class="col-lg-4 col-sm-6 col-xs-12">
                 <div class="white-box analytics-info">
-                    <h3 class="box-title">Total Members</h3>
+                    <h3 class="box-title">Members Registered</h3>
                     <ul class="list-inline two-part">
-                        <li>
-                            <div id="sparklinedash"></div>
-                        </li>
-                    <li class="text-right"><i class="ti-arrow-up text-success"></i> <span class="counter text-success">{{$customers->count()}}</span></li>
+                        <li class="text-center"><span class="counter">{{$customers->count()}}</span></li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-6 col-xs-12">
-                <div class="white-box analytics-info">
-                    <h3 class="box-title">Total Trainers</h3>
+                <div class="white-box  analytics-info">
+                    <h3 class="box-title">Current Members</h3>
                     <ul class="list-inline two-part">
-                        <li>
-                            <div id="sparklinedash2"></div>
-                        </li>
-                        <li class="text-right"><i class="ti-arrow-up text-purple"></i> <span class="counter text-purple">{{$trainers->count()}}</span></li>
+                        <li class="text-center"><span class="counter">{{$customers->count()}}</span></li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-6 col-xs-12">
-                <div class="white-box analytics-info">
-                    <h3 class="box-title">Unique Visitor</h3>
+                <div class="white-box  analytics-info">
+                    <h3 class="box-title">No. of Trainers</h3>
                     <ul class="list-inline two-part">
-                        <li>
-                            <div id="sparklinedash3"></div>
-                        </li>
-                        <li class="text-right"><i class="ti-arrow-up text-info"></i> <span class="counter text-info">911</span></li>
+                        <li class="text-center"><span class="counter">{{$trainers->count()}}</span></li>
                     </ul>
                 </div>
             </div>
         </div>
-        
+
+        <div class="row">
+            <div class="col-lg-4 col-sm-6 col-xs-12">
+                <div class="white-box analytics-info">
+                    <h3 class="box-title">Amount</h3>
+                    <ul class="list-inline two-part">
+                        <li class="text-center"><span class="counter">69,000</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 col-xs-12">
+                <div class="white-box analytics-info">
+                    <h3 class="box-title">Today's Admissions</h3>
+                    <ul class="list-inline two-part">
+                        <li class="text-center"><span class="counter">4</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 col-xs-12">
+                <div class="white-box analytics-info">
+                    <h3 class="box-title">Personal Training</h3>
+                    <ul class="list-inline two-part">
+                        <li class="text-center"><span class="counter">0</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+      
         <div class="row">
             <div class="col-md-12 col-lg-12 col-sm-12">
                 <div class="white-box">

@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                     <ol class="breadcrumb">
-                        <li><a href="#">Gym</a></li>
+                        <li><a href="/gyms">Dashboard</a></li>
                         <li class="active">Membership</li>
                     </ol>
                 </div>
@@ -79,22 +79,19 @@
                                     @php $no = 0; @endphp
 
                                    @foreach ($memberships as $m)
-                                       @if ($m->gid == $gym->gid)    
-
-                                            <tr>
-                                                <td>@php echo ++$no @endphp</td>
-                                                <td>{{$m->type}}</td>
-                                                <td>{{$m->duration}}</td>
-                                                <td>{{$m->fees}}</td>
-                                                <td>
-                                                    <form action="{{action('MembershipController@destroy',$m->mid)}}" method="POST" onsubmit="return confirm('Remove Membership Plan?')">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" class="remove"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                                    </form>
-                                                </td>
-                                            </tr>
-                                       @endif
+                                        <tr>
+                                            <td>@php echo ++$no @endphp</td>
+                                            <td>{{$m->type}}</td>
+                                            <td>{{$m->duration}}</td>
+                                            <td>{{$m->fees}}</td>
+                                            <td>
+                                                <form action="{{action('MembershipController@destroy',$m->mid)}}" method="POST" onsubmit="return confirm('Remove Membership Plan?')">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="remove"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                                </form>
+                                            </td>
+                                        </tr>
                                    @endforeach
                                 </tbody>
                             </table>

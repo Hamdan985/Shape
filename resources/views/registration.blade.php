@@ -15,8 +15,11 @@
             <div class="col-sm-7">
                 <div class="userform">
                 <h3 class="text-center" style="font-size:33px;">Register</h3>
-                @if($errors->any())
-                    <p class="alert alert-danger">{{$errors->first()}}</p>
+                
+                @if ($error = $errors->first('invalid'))
+                    <div class="alert alert-danger">
+                        {{ $error }}
+                    </div>
                 @endif
                 
                 <form action="/registration" method="POST">
@@ -35,45 +38,26 @@
                     <div class="form-group row">
                         <label for="name" class="col-sm-1"><i class="fas fa-user"></i></label>
                         <div class="col-sm-11">
-                            <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" placeholder="Name" value="{{ old('name') }}" required>
-                            @error('name')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Name" value="{{ old('name') }}" required>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="phone" class="col-sm-1"><i class="fas fa-phone-alt"></i></label>
                         <div class="col-sm-11">
-                            <input type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" id="phone" placeholder="Phone No." value="{{ old('phone') }}" required>
-                            @error('phone')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
+                            <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone No." value="{{ old('phone') }}" required>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="city" class="col-sm-1"><i class="fas fa-map-marked-alt"></i></label>
                         <div class="col-sm-11">
-                            <input type="text"  class="form-control @error('city') is-invalid @enderror" name="city" id="city" placeholder="City" value="{{ old('city') }}" required>
-                            @error('city')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
+                            <input type="text"  class="form-control" name="city" id="city" placeholder="City" value="{{ old('city') }}" required>
+                            
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="email" class="col-sm-1"><i class="fas fa-envelope"></i></label>
                         <div class="col-sm-11">
-                            <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" placeholder="Email Id" value="{{ old('email') }}" required>
-                            @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Email Id" value="{{ old('email') }}" required>
                         </div>
                     </div>
                     <div class="form-group row">

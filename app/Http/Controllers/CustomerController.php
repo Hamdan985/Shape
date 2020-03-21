@@ -56,17 +56,19 @@ class CustomerController extends Controller
         else
             $gyms = Gym::where('gcity','LIKE',"%{$request->search}%")->get();
         
+
         $memberships = Membership::all();
         return view('findgyms')->with('gyms',$gyms)->with('memberships',$memberships);
+
     
     }
     
     public function bookgym($gid){
 
         $gym = Gym::where('gid',$gid)->first();
-        $memberships = Membership::all();
+        $memberships = Membership::where('gid',$gid)->get();
 
-        return view('customers.bookgym')->with('gym',$gym)->with('memberships',$memberships);
+        return view('customers.bookgym')->with('memberships',$memberships);
     }
 
 
@@ -136,6 +138,7 @@ class CustomerController extends Controller
         $customer->cname = $request->name;
         $customer->cphone = $request->phone;
         $customer->caddress = $request->address;
+        $customer->ccity = $request->city;
         $customer->gender = $request->gender; 
         $customer->doj = $request->doj;
         $customer->email = $request->email; 

@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 $factory->define(Gym::class, function (Faker $faker) {
     return [
         'gname' => $faker->company,
-        'gcity' => $faker->city,
+        'gcity' => $faker->randomElement($array = array ('Panvel', 'Thane', 'Nerul', 'Vashi')),
         'gphone' => $faker->unique()->numberBetween(200000,900000),
         'email' => $faker->unique()->safeEmail,
         'password' => Hash::make('12345678'),

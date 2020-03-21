@@ -17,7 +17,7 @@ class CreateAdmissionsTable extends Migration
             $table->bigIncrements('aid');
 
             $table->unsignedBigInteger('mid')->nullable();
-            $table->foreign('mid')->references('mid')->on('membership');
+            $table->foreign('mid')->references('mid')->on('memberships');
 
             $table->unsignedBigInteger('cid')->nullable();
             $table->foreign('cid')->references('cid')->on('customers');

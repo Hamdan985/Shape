@@ -35,7 +35,7 @@ class UserLoginController extends Controller
             if(Auth::guard('trainer')->attempt(['tphone' => $request->phone, 'password' => $request->password])){
                 return redirect()->intended('trainers')->with('alert-success', 'You are now logged in.');
             }
-            $errors = new MessageBag(['password' => ['Invalid phone or password.']]);
+            $errors = new MessageBag(['invalid' => ['Invalid phone or password.']]);
             return redirect()->back()->withErrors($errors);
         }
 
@@ -46,7 +46,7 @@ class UserLoginController extends Controller
                 return redirect()->intended('customers');
             }
     
-            $errors = new MessageBag(['password' => ['Invalid phone or password.']]);
+            $errors = new MessageBag(['invalid' => ['Invalid phone or password.']]);
             return redirect()->back()->withErrors($errors);
         }
 
@@ -57,7 +57,7 @@ class UserLoginController extends Controller
                 return redirect()->intended('gyms');
             }
     
-            $errors = new MessageBag(['password' => ['Invalid phone or password.']]);
+            $errors = new MessageBag(['invalid' => ['Invalid phone or password.']]);
             return redirect()->back()->withErrors($errors);
         }
 

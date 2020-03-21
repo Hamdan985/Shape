@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTrainingTable extends Migration
+class CreateTrainingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTrainingTable extends Migration
      */
     public function up()
     {
-        Schema::create('training', function (Blueprint $table) {
+        Schema::create('trainings', function (Blueprint $table) {
             $table->bigIncrements('trid');
 
             $table->unsignedBigInteger('gid')->nullable();
@@ -44,6 +44,6 @@ class CreateTrainingTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('training');
+        Schema::dropIfExists('trainings');
     }
 }

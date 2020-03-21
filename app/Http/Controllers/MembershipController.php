@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Membership;
+use Auth;
 use Illuminate\Http\Request;
 
 class MembershipController extends Controller
@@ -17,7 +18,8 @@ class MembershipController extends Controller
      */
     public function index()
     {
-        $memberships = Membership::all();
+        $gid = Auth::user()->gid;
+        $memberships = Membership::where('gid',$gid)->get();
         return view('gyms.membership')->with('memberships',$memberships);
     }
 

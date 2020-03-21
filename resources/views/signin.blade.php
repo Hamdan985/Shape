@@ -12,7 +12,7 @@
                 <div class="userform">
                     <h3 class="text-center" style="font-size:33px;">Login</h3>
 
-                    @if ($error = $errors->first('password'))
+                    @if ($error = $errors->first('invalid'))
                         <div class="alert alert-danger">
                             {{ $error }}
                         </div>
@@ -35,13 +35,8 @@
                         <div class="form-group row">
                             <label for="phone" class="col-sm-1"><i class="fas fa-phone-alt"></i></label>
                             <div class="col-sm-11">
-                                <input type="text" class="form-control @error('phone') is-invalid @enderror" value="{{ old('phone') }}" name="phone" id="phone" placeholder="Phone No." required>
-                            
-                                @error('phone')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <input type="text" class="form-control" value="{{ old('phone') }}" name="phone" id="phone" placeholder="Phone No." required>
+                    
                             </div>
                         </div>
                     

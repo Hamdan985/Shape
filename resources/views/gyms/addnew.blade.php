@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                     <ol class="breadcrumb">
-                        <li><a href="#">Gym</a></li>
+                        <li><a href="/gyms">Dashboard</a></li>
                         <li class="active">Add new</li>
                     </ol>
                 </div>
@@ -65,7 +65,7 @@
                             <div class="form-group" id="membership" >
                                 <label for="type" class="col-sm-12">Membership Plan</label>
                                 <div class="col-sm-12">
-                                    <select  class="form-control form-control-line" name="type" required>
+                                    <select  class="form-control form-control-line" name="type">
                                         <option value="">Select any one</option>
                                         @foreach ($memberships as $m)
                                                 <option value="{{$m->mid}}">{{$m->type}} ({{$m->duration}})</option>
@@ -74,8 +74,9 @@
                                 </div>
                             </div>
 
-                                @php $gym = Auth::user() @endphp
-                                <input type="hidden" name="gid" value={{$gym->gid}}>     
+                            @php $gym = Auth::user() @endphp
+                            <input type="hidden" name="gid" value={{$gym->gid}}>
+
                             <div class="form-group">
                                 <div class="col-sm-12">
                                     <input type="submit" value="Add new" class="btn btn-primary">

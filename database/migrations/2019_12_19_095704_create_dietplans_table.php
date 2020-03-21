@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDietplanTable extends Migration
+class CreateDietplansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateDietplanTable extends Migration
      */
     public function up()
     {
-        Schema::create('dietplan', function (Blueprint $table) {
+        Schema::create('dietplans', function (Blueprint $table) {
             $table->bigIncrements('dpid');
             
             $table->unsignedBigInteger('tid')->nullable();
@@ -39,6 +39,6 @@ class CreateDietplanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dietplan');
+        Schema::dropIfExists('dietplans');
     }
 }

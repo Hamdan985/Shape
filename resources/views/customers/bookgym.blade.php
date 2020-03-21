@@ -38,18 +38,16 @@
                 <form action="/customer/admission" method="POST" onsubmit="return confirm('Confirm Booking?')">
                     @csrf
                     <div class="form-group">
-                        <label for="type">Type</label>
+                        <label for="type"><b>Type</b></label>
                         <select class="form-control" name="type" id="type" required>
                             <option value="">Select any one</option>
                             @foreach ($memberships as $m)
-                                @if ($m->gid == $gym->gid)    
                                     <option value="{{$m->mid}}">{{$m->type}} ({{$m->duration}})</option>
-                                @endif
                           @endforeach
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="startdate">Start Date</label>
+                        <label for="startdate"><b>Start Date</b></label>
                         <input type="date" class="form-control" name="startdate" id="startdate" required>
                     </div>
                     @php $c = Auth::user() @endphp

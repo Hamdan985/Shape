@@ -12,7 +12,7 @@
                 </div>
                 <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                     <ol class="breadcrumb">
-                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="/gyms">Dashboard</a></li>
                         <li class="active">Trainers</li>
                     </ol>
                 </div>
@@ -33,8 +33,7 @@
                                         <th>Phone</th>
                                         <th>Salary</th>
                                         <th>DOJ</th>
-                                        <th>Profile</th>
-                                        <th>Remove</th>
+                                        <th colspan="2">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -47,12 +46,12 @@
                                             <td>{{$t->tphone}}</td>
                                             <td>{{$t->salary}}</td>
                                             <td>{{$t->doj}}</td>
-                                            <td><a href="{{action('GymController@editTrainer',$t)}}"><i class="fa fa-edit edit" aria-hidden="true"></i></a></td>
+                                            <td><a title="Profile" href="{{action('GymController@editTrainer',$t)}}"><i class="fa fa-edit edit" aria-hidden="true"></i></a></td>
                                             <td>
                                                 <form action="{{action('TrainerController@destroy',$t)}}" method="POST" onsubmit="return confirm('Remove Trainer?')">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="remove"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                                    <button title="Remove trainer" type="submit" class="remove"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                                 </form>
                                             </td>
                                         </tr>   

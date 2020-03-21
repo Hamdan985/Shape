@@ -11,7 +11,7 @@
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <ol class="breadcrumb">
-                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="/gyms">Dashboard</a></li>
                             <li class="active">Members</li>
                         </ol>
                     </div>
@@ -32,10 +32,8 @@
                                             <th>Phone</th>
                                             <th>Balance</th>
                                             <th>DOJ</th>
-                                            {{-- <th>Personal Training</th>
-                                            <th>Profile</th>
-                                            <th>Remove</th> --}}
-                                            <th colspan="3">Action</th>
+                                            
+                                            <th colspan="2">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -49,9 +47,6 @@
                                                 <td>{{$c->cphone}}</td>
                                                 <td>{{$c->balance}}</td>
                                                 <td>{{$c->doj}}</td>
-                                                <td>
-                                                    <a href="" title="Personal Training" style="font-size:20px; text-align:center;"><i class="fa fa-gear fa-fw" aria-hidden="true"></i></a>
-                                                </td>
                                                 <td>
                                                     <a title="Profile" href="{{action('GymController@editCustomer',$c)}}"><i class="fa fa-edit edit" aria-hidden="true"></i></a>
                                                 </td>

@@ -83,7 +83,7 @@
                       <div class="gym-fees">
                           Membership plans : 
                           @foreach ($memberships as $m)
-                            @if ($m->gid == $g->gid)    
+                            @if ($m->gid == $g->gid)
                               <br>{{$m->type}} - {{$m->fees}} /-
                             @endif
                           @endforeach
