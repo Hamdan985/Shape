@@ -55,6 +55,12 @@ class GymController extends Controller
         return view('gyms.gcustomer-edit')->with('customer',$customer);
     }
 
+    public function addplan(){
+        $gid = Auth::user()->gid;
+        $memberships = Membership::where('gid',$gid)->get();
+        $customers = Customer::where('gid',$gid)->get();
+        return view('gyms.addplan')->with('memberships',$memberships)->with('customers',$customers);
+    }
 
     public function create()
     {

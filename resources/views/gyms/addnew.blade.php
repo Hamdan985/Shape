@@ -29,7 +29,7 @@
                             <div class="form-group">
                                 <label for="role" class="col-sm-12">New Member or Trainer</label>
                                 <div class="col-sm-12">
-                                    <select name="role" onchange="showInput()" id="selectRole" class="form-control form-control-line" required>
+                                    <select name="role" id="selectRole" class="form-control form-control-line" required>
                                         <option value="">Select any one</option>                                            
                                         <option value="Customer">Member</option>
                                         <option value="Trainer">Trainer</option>                                            

@@ -74,12 +74,20 @@
                     <li>
                         <a href="/gym/addnew" class="waves-effect"><i class="fa fa-plus-square-o fa-fw" aria-hidden="true"></i>New member/trainer</a>
                     </li>
+                    @php $gid = Auth::user()->gid; @endphp
+
                     <li>
-                        @php $gid = Auth::user()->gid; @endphp                  
-                        <a href="{{action('GymController@customers',$gid)}}" class="waves-effect"><i class="fa fa-group fa-fw" aria-hidden="true"></i>Members</a>
+                        <a href="#" class="waves-effect"><i class="fa fa-group fa-fw" aria-hidden="true"></i>Members <span id="dropdown-list"><i class="fa fa-sort-desc fa-fw" aria-hidden="true"></i> </span></a>
+                    </li>
+                    
+                    <li>
+                        <a href="{{action('GymController@customers',$gid)}}" class="waves-effect"><i class="fa fa-minus fa-fw" aria-hidden="true"></i>View Members</a>
                     </li>
                     <li>
-                        <a href="{{action('GymController@trainers',$gid)}}" class="waves-effect"><i class="fa fa-male fa-fw" aria-hidden="true"></i>Trainers</a>
+                        <a href="/gym/addplan" class="waves-effect"><i class="fa fa-minus fa-fw" aria-hidden="true"></i>Set Membership</a>
+                    </li>
+                    <li>
+                        <a href="{{action('GymController@trainers',$gid)}}" class=" waves-effect"><i class="fa fa-male fa-fw" aria-hidden="true"></i>Trainers</a>
                     </li>
                     <li>
                         <a href="/gym/membership" class="waves-effect"><i class="fa fa-money fa-fw" aria-hidden="true"></i>Membership Plans</a>
@@ -131,6 +139,8 @@
     <script src="{{asset('dashboard/js/dashboard1.js')}}"></script>
     <script src="{{asset('dashboard/plugins/bower_components/toast-master/js/jquery.toast.js')}}"></script>
 
+
+   
 </body>
 
 </html>

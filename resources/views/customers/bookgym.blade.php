@@ -35,7 +35,7 @@
             <div class="userform">
                 <h3 class="text-center my-4" style="font-size:28px;">Book your membership</h3>
 
-                <form action="/customer/admission" method="POST" onsubmit="return confirm('Confirm Booking?')">
+                <form action="/admission" method="POST" onsubmit="return confirm('Confirm Booking?')">
                     @csrf
                     <div class="form-group">
                         <label for="type"><b>Type</b></label>
@@ -46,10 +46,12 @@
                           @endforeach
                         </select>
                     </div>
+
                     <div class="form-group">
                         <label for="startdate"><b>Start Date</b></label>
                         <input type="date" class="form-control" name="startdate" id="startdate" required>
                     </div>
+
                     @php $c = Auth::user() @endphp
                     <input type="hidden" name="cid" value={{$c->cid}}>
 

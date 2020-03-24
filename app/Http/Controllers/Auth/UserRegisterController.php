@@ -69,7 +69,7 @@ class UserRegisterController extends Controller
                 $customer->gid = $request->gid;
                 $customer->save();
     
-                return redirect('customers');
+                return redirect('/gym/addplan');
             }
         }
 

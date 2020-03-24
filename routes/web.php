@@ -37,6 +37,7 @@ Route::prefix('gym')->group(function () {
     Route::get('/trainers/{id}/edit','GymController@editTrainer');
     Route::get('/customers/{id}/edit','GymController@editCustomer');
     Route::get('/addnew','GymController@addnew');
+    Route::get('/addplan','GymController@addplan');
     Route::resource('membership','MembershipController');
 });
 
@@ -47,7 +48,6 @@ Route::prefix('customer')->group(function () {
     Route::get('/profile','CustomerController@profile');
     Route::get('/bookgym/{id}','CustomerController@bookgym');
     Route::get('/viewdiet','CustomerController@viewdiet');
-    Route::resource('/admission','AdmissionController');
 });
 
 
@@ -59,14 +59,8 @@ Route::prefix('trainer')->group(function (){
     Route::resource('/dietplan','DietPlanController');
 });
 
-
-
-
-
-
-
-
-
+//Admission Controller
+Route::resource('/admission','AdmissionController');
 
 
 

@@ -54,7 +54,7 @@ class CustomerController extends Controller
         if($request->search == NULL)
             $gyms = Gym::all();
         else
-            $gyms = Gym::where('gcity','LIKE',"%{$request->search}%")->get();
+            $gyms = Gym::where('gcity','LIKE',"{$request->search}%")->get();
         
 
         $memberships = Membership::all();
