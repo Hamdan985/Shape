@@ -20,7 +20,11 @@
                 <div class="col-md-2 col-xs-2"></div>
                 <div class="col-md-8 col-xs-8">
                     <div class="white-box">
-
+                        @if ($error = $errors->first('membership'))
+                        <div class="alert alert-danger">
+                            {{ $error }}
+                        </div>
+                        @endif
                         <form action="/admission" method="POST" class="form-horizontal form-material">
                             @csrf
                             
@@ -67,9 +71,8 @@
 
               
             </div>
-            <!-- /.row -->
         </div>
-        <!-- /.container-fluid -->
     </div>
-        <!-- /#page-wrapper -->
+    
+   
 @endsection

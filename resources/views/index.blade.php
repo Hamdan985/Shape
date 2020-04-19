@@ -45,7 +45,7 @@
         <h2>Find gyms near you</h2>
             <form action="/findgyms" method="POST" class="form-inline">
               @csrf
-                <input name="search" type="search" placeholder="Location" aria-label="Search">
+                <input name="search" type="search" placeholder="Location" aria-label="Search" style="outline : none">
                 <button class="btn btn-warning btn-lg" type="submit">Search</button>
             </form>
       </div>

@@ -24,7 +24,7 @@ class CreateCustomersTable extends Migration
             $table->date('doj')->nullable();
 
             $table->unsignedBigInteger('gid')->nullable();
-            $table->foreign('gid')->references('gid')->on('gyms');
+            $table->foreign('gid')->references('gid')->on('gyms')->onDelete('cascade');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();

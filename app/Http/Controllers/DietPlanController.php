@@ -37,7 +37,11 @@ class DietPlanController extends Controller
         $tid = Auth::user()->tid;
         $trainer = Trainer::where('tid',$tid)->first();
         $gym = Gym::where('gid',$trainer->gid)->first();
-        $customers = Customer::where('gid',$gym->gid)->get();
+        if($gym){
+            $customers = Customer::where('gid',$gym->gid)->get();
+        }else{
+            $customers = [];
+        }
 
         return view('trainers.setdiet')->with('customers',$customers);
         

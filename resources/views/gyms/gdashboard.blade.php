@@ -3,6 +3,7 @@
 @section('content')
     <div id="page-wrapper">
     <div class="container-fluid">
+        
         <div class="row bg-title">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                 <h4 class="page-title">Dashboard</h4> </div>
@@ -13,23 +14,32 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-sm-6 col-xs-12">
+            <div class="col-md-12">
+                <div class="white-box text-center">
+                    <h3>Welcome {{Auth::user()->gname}}</h3>
+                    <p>You are logged in.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            {{-- <div class="col-lg-4 col-sm-6 col-xs-12">
                 <div class="white-box analytics-info">
                     <h3 class="box-title">Members Registered</h3>
                     <ul class="list-inline two-part">
                         <li class="text-center"><span class="counter">{{$customers->count()}}</span></li>
                     </ul>
                 </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 col-xs-12">
+            </div> --}}
+            <div class="col-lg-6 col-sm-6 col-xs-12">
                 <div class="white-box  analytics-info">
-                    <h3 class="box-title">Current Members</h3>
+                    <h3 class="box-title">No. of Members</h3>
                     <ul class="list-inline two-part">
                         <li class="text-center"><span class="counter">{{$customers->count()}}</span></li>
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-4 col-sm-6 col-xs-12">
+            <div class="col-lg-6 col-sm-6 col-xs-12">
                 <div class="white-box  analytics-info">
                     <h3 class="box-title">No. of Trainers</h3>
                     <ul class="list-inline two-part">
@@ -40,33 +50,33 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-4 col-sm-6 col-xs-12">
+            <div class="col-lg-6 col-sm-6 col-xs-12">
                 <div class="white-box analytics-info">
                     <h3 class="box-title">Amount</h3>
                     <ul class="list-inline two-part">
-                        <li class="text-center"><span class="counter">69,000</span></li>
+                        <li class="text-center"><span class="counter">{{$amount}}</span></li>
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-4 col-sm-6 col-xs-12">
+            <div class="col-lg-6 col-sm-6 col-xs-12">
                 <div class="white-box analytics-info">
                     <h3 class="box-title">Today's Admissions</h3>
                     <ul class="list-inline two-part">
-                        <li class="text-center"><span class="counter">4</span></li>
+                        <li class="text-center"><span class="counter">{{$todayAdmissions->count()}}</span></li>
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-4 col-sm-6 col-xs-12">
+            {{-- <div class="col-lg-4 col-sm-6 col-xs-12">
                 <div class="white-box analytics-info">
                     <h3 class="box-title">Personal Training</h3>
                     <ul class="list-inline two-part">
                         <li class="text-center"><span class="counter">0</span></li>
                     </ul>
                 </div>
-            </div>
+            </div> --}}
         </div>
 
-      
+{{--       
         <div class="row">
             <div class="col-md-12 col-lg-12 col-sm-12">
                 <div class="white-box">
@@ -146,10 +156,11 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- ============================================================== -->
         <!-- chat-listing & recent comments -->
         <!-- ============================================================== -->
+{{--         
         <div class="row">
             <!-- .col -->
             <div class="col-md-12 col-lg-8 col-sm-12">
@@ -247,7 +258,7 @@
                     </div>
                 </div>
             </div>
-            <!-- /.col -->
+            <!-- /.col --> --}}
         </div>
     </div>
     <!-- /.container-fluid -->

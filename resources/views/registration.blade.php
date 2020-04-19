@@ -78,9 +78,9 @@
                 </form>
                 
                 </div>
-                <div id="google" class="text-center">
+                {{-- <div id="google" class="text-center">
                         Or login with <span><img src="img/google.png" alt="google"><img src="img/facebook.png" alt="facebook"></span>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

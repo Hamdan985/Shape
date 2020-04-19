@@ -76,7 +76,6 @@ class CustomerController extends Controller
 
         $cid = Auth::user()->cid;
         $dietplans = DietPlan::where('cid',$cid)->get();
-
         return view('customers.viewdiet')->with('dietplans',$dietplans);
     }
 

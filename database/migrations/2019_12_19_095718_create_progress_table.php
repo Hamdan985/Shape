@@ -17,7 +17,7 @@ class CreateProgressTable extends Migration
             $table->bigIncrements('pid');
 
             $table->unsignedBigInteger('cid')->nullable();
-            $table->foreign('cid')->references('cid')->on('customers');
+            $table->foreign('cid')->references('cid')->on('customers')->onDelete('cascade');
 
             $table->string('bmi');
             $table->string('height');

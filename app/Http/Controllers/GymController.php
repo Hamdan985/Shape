@@ -6,6 +6,8 @@ use App\Gym;
 use App\Trainer;
 use App\Customer;
 use App\Membership;
+use Carbon\Carbon;
+
 use Auth;
 use Illuminate\Http\Request;
 
@@ -22,7 +24,13 @@ class GymController extends Controller
         $trainers = Trainer::where('gid',$gid)->get();
         $customers = Customer::where('gid',$gid)->get();
 
-        return view('gyms.gdashboard')->with('trainers',$trainers)->with('customers',$customers);
+        $amount = Customer::where('gid',$gid)->sum('balance');
+
+        $today = Carbon::now();
+        $todayAdmissions = Customer::where('created_at','like',"{$today->toDateString()}%")->get();
+
+        return view('gyms.gdashboard',compact('trainers','customers','amount','todayAdmissions'));
+
     }
 
     public function profile(){

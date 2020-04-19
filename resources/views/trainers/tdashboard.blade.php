@@ -38,13 +38,15 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>{{$gym->gname}}</td>
-                                            <td>{{$trainer->salary}}</td>
-                                            <td>{{$trainer->doj}}</td>
-                                            
-                                            <td>
-                                                <button title="Remove membership" type="submit" class="remove"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                            </td>   
+                                            @if ($gym)
+                                                <td>{{$gym->gname}}</td>
+                                                <td>{{$trainer->salary}}</td>
+                                                <td>{{$trainer->doj}}</td>
+                                                
+                                                <td>
+                                                    <button title="Remove membership" type="submit" class="remove"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                                </td>   
+                                            @endif
                                         </tr>
                                     </tbody>
                                 </table>

@@ -17,13 +17,13 @@ class CreateTrainingsTable extends Migration
             $table->bigIncrements('trid');
 
             $table->unsignedBigInteger('gid')->nullable();
-            $table->foreign('gid')->references('gid')->on('gyms');
+            $table->foreign('gid')->references('gid')->on('gyms')->onDelete('cascade');
 
             $table->unsignedBigInteger('cid')->nullable();
-            $table->foreign('cid')->references('cid')->on('customers');
+            $table->foreign('cid')->references('cid')->on('customers')->onDelete('cascade');
 
             $table->unsignedBigInteger('tid')->nullable();
-            $table->foreign('tid')->references('tid')->on('trainers');
+            $table->foreign('tid')->references('tid')->on('trainers')->onDelete('cascade');
 
             $table->string('type');
             $table->date('startdate');

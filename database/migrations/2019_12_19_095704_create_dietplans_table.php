@@ -17,10 +17,10 @@ class CreateDietplansTable extends Migration
             $table->bigIncrements('dpid');
             
             $table->unsignedBigInteger('tid')->nullable();
-            $table->foreign('tid')->references('tid')->on('trainers');
+            $table->foreign('tid')->references('tid')->on('trainers')->onDelete('cascade');
 
             $table->unsignedBigInteger('cid')->nullable();
-            $table->foreign('cid')->references('cid')->on('customers');
+            $table->foreign('cid')->references('cid')->on('customers')->onDelete('cascade');
 
             $table->string('morning');
             $table->string('afternoon');

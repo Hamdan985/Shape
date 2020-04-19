@@ -10,22 +10,14 @@
     <link rel="icon" href="{{asset('img/strong.png')}}">
 
     <title>Dashboard</title>
-    <!-- Bootstrap Core CSS -->
     <link href="{{asset('dashboard/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
-    <!-- Menu CSS -->
     <link href="{{asset('dashboard/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css')}}" rel="stylesheet">
-    <!-- toast CSS -->
     <link href="{{asset('dashboard/plugins/bower_components/toast-master/css/jquery.toast.css')}}" rel="stylesheet">
-    <!-- morris CSS -->
     <link href="{{asset('dashboard/plugins/bower_components/morrisjs/morris.css')}}" rel="stylesheet">
-    <!-- chartist CSS -->
     <link href="{{asset('dashboard/plugins/bower_components/chartist-js/dist/chartist.min.css')}}" rel="stylesheet">
     <link href="{{asset('dashboard/plugins/bower_components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css')}}" rel="stylesheet">
-    <!-- animation CSS -->
     <link href="{{asset('dashboard/css/animate.css')}}" rel="stylesheet">
-    <!-- Custom CSS -->
     <link href="{{asset('dashboard/css/style.css')}}" rel="stylesheet">
-    <!-- color CSS -->
     <link href="{{asset('dashboard/css/colors/default.css')}}" id="theme" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:900i|Varela+Round&display=swap" rel="stylesheet"> 
 
@@ -43,12 +35,12 @@
                         <a class="nav-toggler open-close waves-effect waves-light hidden-md hidden-lg" href="javascript:void(0)"><i class="fa fa-bars"></i></a>
                     </li>
                     <li>
-                        <form role="search" class="app-search hidden-sm hidden-xs m-r-10">
+                        {{-- <form role="search" class="app-search hidden-sm hidden-xs m-r-10">
                             <input type="text" placeholder="Search..." class="form-control"> 
                             <a href="">
                                 <i class="fa fa-search"></i>
                             </a> 
-                        </form>
+                        </form> --}}
                     </li>
                     <li>
                         @php $customer = Auth::user(); @endphp
@@ -69,15 +61,15 @@
                     <li>
                         <a href="/findgyms" class="waves-effect"><i class="fa fa-arrows fa-fw" aria-hidden="true"></i>Find Gyms</a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="#" class="waves-effect"><i class="fa fa-gear fa-fw" aria-hidden="true"></i>Personal Training</a>
-                    </li>
+                    </li> --}}
                     <li>
                         <a href="/customer/viewdiet" class="waves-effect"><i class="fa fa-spoon fa-fw" aria-hidden="true"></i>Diet Plans</a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="#" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i>Progress</a>
-                    </li>
+                    </li> --}}
                     <li>
                         <a class="waves-effect" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
@@ -99,26 +91,16 @@
         @yield('content')
 
          
-  <!-- All Jquery -->
-    <!-- ============================================================== -->
     <script src="{{asset('dashboard/plugins/bower_components/jquery/dist/jquery.min.js')}}"></script>
-    <!-- Bootstrap Core JavaScript -->
     <script src="{{asset('dashboard/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-    <!-- Menu Plugin JavaScript -->
     <script src="{{asset('dashboard/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js')}}"></script>
-    <!--slimscroll JavaScript -->
     <script src="{{asset('dashboard/js/jquery.slimscroll.js')}}"></script>
-    <!--Wave Effects -->
     <script src="{{asset('dashboard/js/waves.js')}}"></script>
-    <!--Counter js -->
     <script src="{{asset('dashboard/plugins/bower_components/waypoints/lib/jquery.waypoints.js')}}"></script>
     <script src="{{asset('dashboard/plugins/bower_components/counterup/jquery.counterup.min.js')}}"></script>
-    <!-- chartist chart -->
     <script src="{{asset('dashboard/plugins/bower_components/chartist-js/dist/chartist.min.js')}}"></script>
     <script src="{{asset('dashboard/plugins/bower_components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js')}}"></script>
-    <!-- Sparkline chart JavaScript -->
     <script src="{{asset('dashboard/plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js')}}"></script>
-    <!-- Custom Theme JavaScript -->
     <script src="{{asset('dashboard/js/custom.min.js')}}"></script>
     <script src="{{asset('dashboard/js/dashboard1.js')}}"></script>
     <script src="{{asset('dashboard/plugins/bower_components/toast-master/js/jquery.toast.js')}}"></script>

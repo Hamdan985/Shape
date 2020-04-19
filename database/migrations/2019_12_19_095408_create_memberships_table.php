@@ -17,7 +17,7 @@ class CreateMembershipsTable extends Migration
             $table->bigIncrements('mid');
 
             $table->unsignedBigInteger('gid')->nullable();
-            $table->foreign('gid')->references('gid')->on('gyms');
+            $table->foreign('gid')->references('gid')->on('gyms')->onDelete('cascade');
 
             $table->string('type');
             $table->string('duration');

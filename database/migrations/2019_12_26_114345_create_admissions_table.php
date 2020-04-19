@@ -17,10 +17,10 @@ class CreateAdmissionsTable extends Migration
             $table->bigIncrements('aid');
 
             $table->unsignedBigInteger('mid')->nullable();
-            $table->foreign('mid')->references('mid')->on('memberships');
+            $table->foreign('mid')->references('mid')->on('memberships')->onDelete('cascade');
 
             $table->unsignedBigInteger('cid')->nullable();
-            $table->foreign('cid')->references('cid')->on('customers');
+            $table->foreign('cid')->references('cid')->on('customers')->onDelete('cascade');
 
             $table->date('startdate');
             $table->date('enddate');
