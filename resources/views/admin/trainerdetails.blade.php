@@ -83,8 +83,9 @@
                                 use App\Gym;
                                 $mygym = Gym::where('gid',$trainer->gid)->first();                                  
                             @endphp
-
-                            {{$mygym->gname}}
+                            @if ($mygym)
+                                {{$mygym->gname}}
+                            @endif
                         </div>
                     </div>
                 
