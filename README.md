@@ -1,3 +1,15 @@
+# ShapeGyms
+
+This application brings Gyms, Customers and Trainers on a common platform which helps managing the data and reports.
+
+## Features :
+
+- Complete data management for gyms, keeping track of all members and trainers.
+- Find gyms at any location with different membership plans.
+- Diet plans by professional trainers
+- Advertising your organization, growing networks for small gyms.
+
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
