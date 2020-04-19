@@ -14,7 +14,9 @@ use Illuminate\Http\Request;
 class GymController extends Controller
 {
     public function __construct(){
-        $this->middleware('auth:gym');
+        $this->middleware('auth:gym',[
+            'except' => ['destroy']
+        ]);
 
     }
     
@@ -27,7 +29,7 @@ class GymController extends Controller
         $amount = Customer::where('gid',$gid)->sum('balance');
 
         $today = Carbon::now();
-        $todayAdmissions = Customer::where('created_at','like',"{$today->toDateString()}%")->get();
+        $todayAdmissions = Customer::where('gid',$gid)->where('created_at','like',"{$today->toDateString()}%")->get();
 
         return view('gyms.gdashboard',compact('trainers','customers','amount','todayAdmissions'));
 
@@ -106,8 +108,8 @@ class GymController extends Controller
 
     public function destroy(Gym $gym)
     {
-        // $gym->delete();
-        // return redirect()->back();
+        $gym->delete();
+        return redirect()->back();
     }
 
     

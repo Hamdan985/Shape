@@ -45,7 +45,7 @@
                             <th scope="row">Gym Name</th>
                             <th scope="row">Phone No.</th>
                             <th scope="row">Email</th>
-                            <th scope="row">Action</th>
+                            <th scope="row" colspan="2">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -58,6 +58,13 @@
                                 <td>{{$g->gphone}}</td>
                                 <td>{{$g->email}}</td>
                                 <td><a href="{{action('HomeController@gymdetails',$g)}}" class="btn btn-primary btn-sm">Details</a></td>
+                                <td>
+                                    <form action="{{action('GymController@destroy',$g)}}" method="POST" onsubmit="return confirm('Remove Gym?')">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                                    </form>
+                                </td> 
                             </tr>
                         @endforeach
                     </tbody>
@@ -76,7 +83,7 @@
                             <th scope="row">Customer Name</th>
                             <th scope="row">Phone No.</th>
                             <th scope="row">Email</th>
-                            <th scope="row">Action</th>
+                            <th scope="row" colspan="2">Action</th>
 
                         </tr>
                     </thead>
@@ -90,6 +97,13 @@
                                 <td>{{$c->cphone}}</td>
                                 <td>{{$c->email}}</td>
                                 <td><a href="{{action('HomeController@customerdetails',$c)}}" class="btn btn-primary btn-sm">Details</a></td>
+                                <td>
+                                    <form action="{{action('CustomerController@destroy',$c)}}" method="POST" onsubmit="return confirm('Remove Gym?')">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                                    </form>
+                                </td> 
                             </tr>
                         @endforeach
                     </tbody>
@@ -108,7 +122,7 @@
                             <th scope="row">Trainer Name</th>
                             <th scope="row">Phone No.</th>
                             <th scope="row">Email</th>
-                            <th scope="row">Action</th>
+                            <th scope="row" colspan="2">Action</th>
 
                         </tr>
                     </thead>
@@ -122,6 +136,13 @@
                                 <td>{{$t->tphone}}</td>
                                 <td>{{$t->email}}</td>
                                 <td><a href="{{action('HomeController@trainerdetails',$t)}}" class="btn btn-primary btn-sm">Details</a></td>
+                                <td>
+                                    <form action="{{action('TrainerController@destroy',$t)}}" method="POST" onsubmit="return confirm('Remove Gym?')">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                                    </form>
+                                </td> 
                             </tr>
                         @endforeach
                     </tbody>
