@@ -63,22 +63,3 @@ Route::prefix('trainer')->group(function (){
 Route::resource('/admission','AdmissionController');
 
 
-
-
-//AmpleAdmin Routes
-Route::get('/basic', function () {
-    return view('layouts.dash.basic-table');
-});
-Route::get('/blank', function () {
-    return view('layouts.dash.blank');
-});
-Route::get('/dashboar', function () {
-    return view('layouts.dash.dashboard');
-});
-Route::get('/fontawesome', function () {
-    return view('layouts.dash.fontawesome');
-});
-Route::get('/profile', function () {
-    return view('layouts.dash.profile');
-});
-
